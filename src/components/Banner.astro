@@ -1,0 +1,10 @@
+---
+interface Props {
+	bannerImage?: string;
+}
+const { bannerImage } = Astro.props;
+---
+
+<div class="header-banner" style={`background-image: url(${bannerImage});`}>
+	<slot />
+</div>

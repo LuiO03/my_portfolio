@@ -11,17 +11,18 @@ export async function getStaticPaths() {
     },
     props: {
       project,
+      name: project.id,
     },
   }));
 }
 
-const { project } = Astro.props;
+const { project, name } = Astro.props;
 ---
 
 <MainLayout title={project.data.title}>
   <h1>{project.data.title}</h1>
   <p>{project.data.description}</p>
   <div class="project-carrousel">
-    <img src={project.data.image} alt={project.data.title} />
+    <img src={project.data.image} alt={project.data.title} transition:name={name} />
   </div>
 </MainLayout>

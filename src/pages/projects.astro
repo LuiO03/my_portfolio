@@ -9,17 +9,17 @@ import { Icon } from 'astro-icon/components';
 		<ul class="project-list">
 			<li class="project-item">
 				<div class="project-image">
-					<img src="/images/proyectos/proyecto1.jpg" alt="Proyecto 1" />
+					<img src="/images/proyectos/modamarket/proyecto1.jpg" alt="Proyecto 1" transition:name="modamarket" />
 					<div class="project-tags">
 						<span class="project-tag js">JavaScript</span>
 						<span class="project-tag php">PHP</span>
 					</div>
 				</div>
-				<a href="/projects/project1">POS ModaMarket</a>
+				<a href="/projects/modamarket">POS ModaMarket</a>
 			</li>
 			<li class="project-item">
 				<div class="project-image">
-					<img src="/images/proyectos/proyecto2.jpg" alt="Proyecto 2" />
+					<img src="/images/proyectos/proyecto2.jpg" alt="Proyecto 2" transition:name="project2" />
 					<div class="project-tags">
 						<span class="project-tag java">Java</span>
 					</div>
@@ -28,7 +28,7 @@ import { Icon } from 'astro-icon/components';
 			</li>
 			<li class="project-item">
 				<div class="project-image">
-					<img src="/images/proyectos/proyecto3.jpg" alt="Proyecto 3" />
+					<img src="/images/proyectos/proyecto3.jpg" alt="Proyecto 3" transition:name="project3" />
 					<div class="project-tags">
 						<span class="project-tag html">HTML</span>
 						<span class="project-tag css">CSS</span>
@@ -37,9 +37,15 @@ import { Icon } from 'astro-icon/components';
 				<a href="/projects/project3">Forex Expeditions</a>
 			</li>
 		</ul>
-		<a href="/projects" class="button bg-accent">
-			<Icon name="tabler:arrow-right" class="button-icon" />
-			Siguiente
-		</a>
+		<div>
+			<a href="/" class="button bg-success">
+				<Icon name="tabler:home" class="button-icon" />
+				Inicio
+			</a>
+			<a href="/projects" class="button bg-accent">
+				<Icon name="tabler:arrow-right" class="button-icon" />
+				Siguiente
+			</a>
+		</div>
 	</Section>
 </MainLayout>

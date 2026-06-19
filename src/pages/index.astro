@@ -2,63 +2,42 @@
 import Section from "../components/Section.astro";
 import { Icon } from "astro-icon/components";
 import MainLayout from "../layouts/MainLayout.astro";
-
+import Banner from "../components/Banner.astro";
+import ProjectList from "../components/ProjectList.astro";
 import "../styles/home.css";
 ---
 
-<MainLayout title="Inicio" bannerImage="../../public/images/banner-home.jpg">
-	<Fragment slot="banner">
-		<h1>Bienvenido a mi portafolio</h1>
-		<p>Explora mis proyectos y conoce más sobre mí.</p>
+<MainLayout title="Inicio">
+	<Fragment slot="header">
+		<Banner bannerImage="/images/banner-home.jpg">
+			<div class="banner-content">
+				<h1>Bienvenido a mi portafolio</h1>
+				<p>Explora mis proyectos y conoce más sobre mí.</p>
+				<a href="#projects" class="button bg-accent">
+					<Icon name="tabler:eye-filled" class="button-icon" />
+					Ver Proyectos
+				</a>
+			</div>
+		</Banner>
 	</Fragment>
 
 	<Section title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
 		<p>
-			Soy un desarrollador apasionado por la tecnología y el desarrollo de software. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes. Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que marquen la diferencia.
+			Soy un desarrollador apasionado por la tecnología y el desarrollo de software. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes.
+			Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que marquen la diferencia.
 		</p>
 		<p>
-			Desde pequeño, siempre he estado fascinado por cómo funcionan las cosas detrás de escena, lo que me llevó a aprender programación y desarrollo web. A lo largo de mi carrera, he trabajado en una variedad de proyectos, desde aplicaciones web hasta sistemas más complejos, siempre buscando mejorar mis habilidades y aprender nuevas tecnologías.
+			Desde pequeño, siempre he estado fascinado por cómo funcionan las cosas detrás de escena, lo que me llevó a aprender programación y desarrollo web. A lo largo de mi carrera,
+			he trabajado en una variedad de proyectos, desde aplicaciones web hasta sistemas más complejos, siempre buscando mejorar mis habilidades y aprender nuevas tecnologías.
 		</p>
 		<p>
-			Mi enfoque se centra en la calidad del código, la usabilidad y la experiencia del usuario. Me esfuerzo por crear productos que no solo funcionen bien, sino que también sean intuitivos y agradables de usar. Estoy emocionado por las oportunidades futuras y los desafíos que vendrán en el mundo del desarrollo de software.
+			Mi enfoque se centra en la calidad del código, la usabilidad y la experiencia del usuario. Me esfuerzo por crear productos que no solo funcionen bien, sino que también sean
+			intuitivos y agradables de usar. Estoy emocionado por las oportunidades futuras y los desafíos que vendrán en el mundo del desarrollo de software.
 		</p>
 	</Section>
 
-	<Section
-		title="Mis Proyectos"
-		description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente."
-	>
-		<ul class="project-list">
-			<li class="project-item">
-				<div class="project-image">
-					<img src="/images/proyectos/proyecto1.jpg" alt="Proyecto 1" />
-					<div class="project-tags">
-						<span class="project-tag js">JavaScript</span>
-						<span class="project-tag php">PHP</span>
-					</div>
-				</div>
-				<a href="/projects/modamarket">POS ModaMarket</a>
-			</li>
-			<li class="project-item">
-				<div class="project-image">
-					<img src="/images/proyectos/proyecto2.jpg" alt="Proyecto 2" />
-					<div class="project-tags">
-						<span class="project-tag java">Java</span>
-					</div>
-				</div>
-				<a href="/projects/project2">POS ModaMarket</a>
-			</li>
-			<li class="project-item">
-				<div class="project-image">
-					<img src="/images/proyectos/proyecto3.jpg" alt="Proyecto 3" />
-					<div class="project-tags">
-						<span class="project-tag html">HTML</span>
-						<span class="project-tag css">CSS</span>
-					</div>
-				</div>
-				<a href="/projects/project3">Forex Expeditions</a>
-			</li>
-		</ul>
+	<Section title="Mis Proyectos" description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
+		<ProjectList limit={3} />
 		<a href="/projects" class="button bg-accent">
 			<Icon name="tabler:eye-filled" class="button-icon" />
 			Ver todos los proyectos

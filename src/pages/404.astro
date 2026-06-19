@@ -1,23 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/404.css";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Página no encontrada">
-    <div class="notfound-container">
-        <h1>404 - Página no encontrada</h1>
-        <p class="zoom-area">
-          <b>¿Te perdiste?</b>
-          No te preocupes, aquí hay un mapa para ayudarte a encontrar
-          el camino de regreso.
-        </p>
-        <section class="error-container">
-          <span class="four"><span class="screen-reader-text">4</span></span>
-          <span class="zero"><span class="screen-reader-text">0</span></span>
-          <span class="four"><span class="screen-reader-text">4</span></span>
-        </section>
-        <div class="link-container">
-          <a href="/" class="more-link">Visita la página original</a>
-        </div>
-    </div>
+	<div class="notfound-container">
+		<h1>404 - Página no encontrada</h1>
+		<p class="zoom-area">
+			<b>¿Te perdiste?</b>
+			No te preocupes, aquí hay un mapa para ayudarte a encontrar el camino de regreso.
+		</p>
+		<section class="error-container">
+			<span class="four"><span class="screen-reader-text">4</span></span>
+			<span class="zero"><span class="screen-reader-text">0</span></span>
+			<span class="four"><span class="screen-reader-text">4</span></span>
+		</section>
+		<a href="/" class="button bg-success">
+      <Icon name="tabler:home" class="button-icon" />
+      Visita la página original
+    </a>
+	</div>
 </MainLayout>

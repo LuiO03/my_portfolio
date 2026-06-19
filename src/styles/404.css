@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: var(--color-bg);
 }
 
 .error-container {
@@ -158,7 +159,7 @@
   height: 70px;
   left: 43px;
   bottom: 43px;
-  background: #fdfaf5;
+  background-color: var(--color-bg);
   box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -211,22 +212,6 @@ h1 {
   text-align: center;
   
 }
-.link-container {
-  text-align: center;
-}
-a.more-link {
-  text-transform: uppercase;
-  font-size: 13px;
-  background-color: var(--color-accent);
-  padding: 10px 15px;
-  border-radius: 0.25rem;
-  color: #fff;
-  display: inline-block;
-  line-height: 1.5;
-  text-decoration: none;
-  margin-top: 50px;
-  letter-spacing: 1px;
-}
 
 @media (max-width: 768px) {
   .error-container {
@@ -242,11 +227,6 @@ a.more-link {
   .zoom-area {
     font-size: 1rem;
     padding: 0 1rem;
-  }
-
-  .more-link {
-    width: 100%;
-    max-width: 250px;
   }
 }
 

@@ -10,7 +10,6 @@ interface Props {
 	//isActive?: boolean;
 	bannerImage?: string;
 }
-const hasBanner = Astro.slots.has("banner");
 const { title, bannerImage } = Astro.props;
 
 import "../styles/layouts/global.css";
@@ -44,21 +43,14 @@ import "../styles/ui/backgrounds.css";
 		</script>
 	</head>
 	<body>
-    <!--  Barra de navegación -->
-    <Navbar />
+		<!--  Barra de navegación -->
+		<Navbar />
 		<main>
-      <header>
-        <!--  Banner o sección de encabezado -->
-        {
-          hasBanner && (
-            <div class="header-banner" style={`background-image: url(${bannerImage});`}>
-              <slot name="banner" />
-            </div>
-          )
-        }
-      </header>
+			<header>
+				<slot name="header" />
+			</header>
 			<slot />
-      <Footer />
+			<Footer />
 		</main>
 	</body>
 </html>

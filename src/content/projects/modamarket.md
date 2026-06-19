@@ -1,8 +1,10 @@
+
 ---
-title: modamarket
-description: Portafolio desarrollado con Astro
-image: /images/proyectos/proyecto1.jpg
+title: POS ModaMarket
+description: Página
+image: /images/proyectos/modamarket/img01.jpg
 github: https://github.com/...
 demo: https://...
+tags: ["PHP", "Html", "Css"]
 ---
 Aquí puedes escribir toda la información del proyecto usando Markdown.

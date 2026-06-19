@@ -26,10 +26,6 @@
     color: var(--color-accent);
 }
 
-.section .button{
-    color: white;
-}
-
 .project-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -94,7 +90,7 @@
 .project-tag.css{
     background-color: #264de4;
 }
-.project-tag.js{
+.project-tag.javascript{
     background-color: #f0db4f;
     color: #000;
 }
