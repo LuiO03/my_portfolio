@@ -1,0 +1,227 @@
+.navbar {
+	background-color: var(--color-navbar-bg);
+	box-shadow: var(--box-shadow);
+	position: sticky;
+	top: 0;
+	height: 100%;
+	z-index: 100;
+}
+
+.navbar-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+	height: 100%;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.navbar-content .logo {
+	display: flex;
+	align-items: center;
+	font-size: var(--font-size-h2);
+	font-weight: 700;
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+.navbar-content .nav-links {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	gap: 1rem;
+	width: 100%;
+}
+
+.navbar-content li {
+	font-size: var(--font-size-h6);
+	display: inline-block;
+}
+
+.navbar-content li a {
+	padding: 0.5rem 1rem;
+	border-radius: var(--radius-active);
+	text-decoration: none;
+	color: var(--color-text);
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.navbar-content li .active {
+	background-color: var(--color-text);
+	color: var(--color-bg);
+	pointer-events: none;
+	cursor: default;
+}
+
+.navbar-content li .disabled:hover {
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+}
+
+.nav-actions {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-overlay {
+	display: none;
+}
+
+.nav-icon-theme {
+	font-size: var(--font-size-h4);
+	cursor: pointer;
+	color: var(--color-text);
+}
+
+/* === botón hamburguesa === */
+.nav-icon-hamburger {
+	position: relative;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 7px;
+	width: 40px;
+	height: 40px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	z-index: 70;
+	transition: transform 0.3s ease;
+}
+
+.hamburger-line {
+	display: block;
+	height: 3px;
+	background-color: var(--color-text);
+	border-radius: 12px;
+	transition:
+		transform 0.3s ease,
+		width 0.3s ease;
+}
+
+/* Línea 1: mitad izquierda, gira desde la derecha */
+.hamburger-line:nth-child(1) {
+	width: 50%;
+	transform-origin: right;
+	align-self: flex-start;
+}
+
+/* Línea 2: línea completa */
+.hamburger-line:nth-child(2) {
+	width: 100%;
+}
+
+/* Línea 3: mitad derecha, gira desde la izquierda */
+.hamburger-line:nth-child(3) {
+	width: 50%;
+	align-self: flex-end;
+	transform-origin: left;
+}
+
+/* === Estado activo (menú abierto) === */
+.nav-icon-hamburger.active .hamburger-line:nth-child(1) {
+	transform: rotate(225deg) translate(-7px, -7px);
+	width: 50%;
+}
+
+.nav-icon-hamburger.active .hamburger-line:nth-child(2) {
+	transform: rotate(-45deg);
+	width: 100%;
+}
+
+.nav-icon-hamburger.active .hamburger-line:nth-child(3) {
+	transform: rotate(225deg) translate(7px, 7px);
+	width: 50%;
+}
+
+/* ==  ==*/
+
+.header-banner {
+	height: 300px;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.header-banner h1,
+.header-banner p {
+	color: white;
+}
+
+@media (max-width: 768px) {
+	.navbar{
+		flex-direction: row;
+		height: 60px;
+	}
+
+	.navbar-content {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.navbar-content .nav-links {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--color-sidebar-bg);
+		position: fixed;
+		top: 60px;
+		height: calc(100dvh - 60px);
+		left: 0;
+		width: 50%;
+		padding: 1rem;
+		z-index: 100;
+		transform: translateX(-110%);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		
+		transition:
+			transform 0.28s ease,
+			opacity 0.28s ease,
+			visibility 0.28s ease;
+	}
+
+	.navbar-content .nav-links.menu-open {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	.nav-overlay {
+		display: block;
+		position: fixed;
+		top: 60px;
+		left: 0;
+		width: 100vw;
+		height: calc(100vh - 60px);
+		background-color: rgba(0, 0, 0, 0.45);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		z-index: 50;
+		transition:
+			opacity 0.28s ease,
+			visibility 0.28s ease;
+	}
+
+	.nav-overlay.visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	.nav-icon-hamburger {
+		display: flex;
+		z-index: 1200;
+	}
+}

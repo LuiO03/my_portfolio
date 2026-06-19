@@ -1,5 +1,8 @@
 ---
-	import MainLayout from '../layouts/MainLayout.astro';
+import Section from "../components/Section.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+import "../styles/home.css";
 ---
 
 <MainLayout title="Inicio" bannerImage="../../public/images/banner-home.jpg">
@@ -7,5 +10,42 @@
 		<h1>Bienvenido a mi portafolio</h1>
 		<p>Explora mis proyectos y conoce más sobre mí.</p>
 	</Fragment>
-	
+
+	<Section
+		title="Mis Proyectos"
+		description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente. Desde aplicaciones web hasta proyectos de código abierto, cada uno refleja mi pasión por la tecnología y el desarrollo."
+	>
+		<ul class="project-list">
+			<li class="project-item">
+				<div class="project-image">
+					<img src="/images/proyectos/proyecto1.jpg" alt="Proyecto 1" />
+					<div class="project-tags">
+						<span class="project-tag js">JavaScript</span>
+						<span class="project-tag php">PHP</span>
+					</div>
+				</div>
+				<a href="/projects/project1">POS ModaMarket</a>
+			</li>
+			<li class="project-item">
+				<div class="project-image">
+					<img src="/images/proyectos/proyecto2.jpg" alt="Proyecto 2" />
+					<div class="project-tags">
+						<span class="project-tag java">Java</span>
+					</div>
+				</div>
+				<a href="/projects/project2">POS ModaMarket</a>
+			</li>
+			<li class="project-item">
+				<div class="project-image">
+					<img src="/images/proyectos/proyecto3.jpg" alt="Proyecto 3" />
+					<div class="project-tags">
+						<span class="project-tag html">HTML</span>
+						<span class="project-tag css">CSS</span>
+					</div>
+				</div>
+				<a href="/projects/project3">Forex Expeditions</a>
+			</li>
+		</ul>
+		<a href="/projects" class="boton boton-orange">Ver todos los proyectos</a>
+	</Section>
 </MainLayout>

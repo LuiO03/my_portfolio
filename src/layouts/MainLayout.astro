@@ -6,49 +6,61 @@ import Footer from "../components/Footer.astro";
 
 //const {title} = Astro.props;
 interface Props {
-  title: string;
-  //isActive?: boolean;
-  bannerImage?: string;
+	title: string;
+	//isActive?: boolean;
+	bannerImage?: string;
 }
 const hasBanner = Astro.slots.has("banner");
 const { title, bannerImage } = Astro.props;
 
-import "../styles/global.css";
+import "../styles/layouts/global.css";
+import "../styles/ui/buttons.css";
+import "../styles/ui/backgrounds.css";
 ---
 
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <ClientRouter />
-    <!-- Habilita el enrutamiento del lado del cliente para transiciones suaves -->
-  </head>
-  <body>
-    <header>
-      <!--  Barra de navegación -->
-      <Navbar />
-      
-      <!--  Banner o sección de encabezado -->
-      {
-        hasBanner && (
-          <div
-            class="header-banner"
-            style={`background-image: url(${bannerImage});`}
-          >
-            <slot name="banner" />
-          </div>
-        )
-      }
-    </header>
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Habilita el enrutamiento del lado del cliente para transiciones suaves -->
+		<ClientRouter />
+		<!-- Script para manejar el cambio de tema -->
+		<script is:inline>
+			function applyTheme() {
+				const theme = localStorage.getItem("theme");
+
+				const dark = theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+				document.documentElement.classList.toggle("dark", dark);
+			}
+
+			applyTheme();
+
+			document.addEventListener("astro:page-load", applyTheme);
+		</script>
+	</head>
+	<body>
+    <!--  Barra de navegación -->
+    <Navbar />
+		<main>
+      <header>
+        <!--  Banner o sección de encabezado -->
+        {
+          hasBanner && (
+            <div class="header-banner" style={`background-image: url(${bannerImage});`}>
+              <slot name="banner" />
+            </div>
+          )
+        }
+      </header>
+			<slot />
+      <Footer />
+		</main>
+	</body>
 </html>
 <!-- 
 <style is:global>

@@ -1,0 +1,75 @@
+.boton {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1;
+    border-radius: var(--radius-boton);
+    overflow: hidden;
+    padding: 0px 15px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    height: 40px;
+}
+
+.boton[disabled],
+.boton:disabled {
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+.boton-sm[disabled],
+.boton-sm:disabled {
+    opacity: 0.6;
+    box-shadow: none;
+}
+.boton[disabled],
+.boton:disabled {
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+.boton .boton-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.boton .boton-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.boton:hover {
+    color: white;
+    box-shadow: var(--shadow-material);
+}
+
+.boton:active {
+    transform: scale(0.95);
+}
+
+.boton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -250%;
+    width: 200%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: skewX(-20deg);
+    z-index: -1;
+    transition: left 0.6s ease-in-out;
+}
+
+.boton:hover::after {
+    left: -40%;
+}

@@ -1,0 +1,340 @@
+/* ==== Colores Estados ==== */
+:root {
+    --color-primary: #19247f;
+    --color-primary-hover: #141c66;
+    --color-primary-pastel: #e5f0ff;
+
+    --color-secondary: #403a43;
+    --color-secondary-hover: #2b242e;
+    --color-secondary-pastel: #DFDBE5;
+
+    --color-success: #009900;
+    --color-success-light: #4ad5b8;
+    --color-success-hover: #007a00;
+    --color-success-pastel: #e5f9e7;
+
+    --color-danger: #d30035;
+    --color-danger-hover: #a50029;
+    --color-danger-pastel: #ffe5e5;
+
+    --color-warning: #ffa000;
+    --color-warning-hover: #e68a00;
+    --color-warning-pastel: #fff7e0;
+
+    --color-info: #1d61d0;
+    --color-info-hover: #164da6;
+    --color-info-pastel: #e5faff;
+
+    --color-orange: #ff5722;
+    --color-orange-hover: #e64a19;
+    --color-orange-pastel: #fff0e6;
+
+    --color-purple: #3b0270;
+    --color-purple-hover: #30035a;
+    --color-purple-pastel: #f2e2ff;
+
+    --color-pink: #e83e8c;
+    --color-pink-hover: #c21c6a;
+    --color-pink-pastel: #ffe6f1;
+
+    --color-light: #f8f9fa;
+    --color-light-hover: #e9ecef;
+
+    --color-dark: #212529;
+    --color-dark-hover: #0d0f12;
+    --color-dark-pastel: #2a2d30;
+}
+
+/* ==== Colores Estados - Modo Oscuro ==== */
+.dark {
+    /* Colores pastel adaptados para modo oscuro */
+    /* Los colores pastel en dark mode son más oscuros y menos saturados */
+    /* para mantener buen contraste con el fondo oscuro */
+
+    --color-primary-pastel: #1a2447;
+
+    --color-secondary: #9d979f;
+    --color-secondary-pastel: #2a2530;
+
+    --color-success-pastel: #0d2b0d;
+    /*--color-danger-pastel: #3d1520;*/
+    --color-danger-pastel: #241616;
+    --color-warning-pastel: #3d2f0d;
+    --color-info-pastel: #1a2d47;
+    --color-orange-pastel: #3d2015;
+
+    --color-purple: #5c1d97;
+    --color-purple-pastel: #250a3d;
+
+    --color-pink-pastel: #3d1a2d;
+}
+
+.card-primary {
+    background-color: var(--color-primary-pastel);
+    color: var(--color-primary);
+}
+
+.card-secondary {
+    background-color: var(--color-secondary-pastel);
+    color: var(--color-secondary);
+}
+
+.card-success {
+    background-color: var(--color-success-pastel);
+    color: var(--color-success);
+}
+
+.card-danger {
+    background-color: var(--color-danger-pastel);
+    color: var(--color-danger);
+}
+
+.card-warning {
+    background-color: var(--color-warning-pastel);
+    color: var(--color-warning);
+}
+
+.card-info {
+    background-color: var(--color-info-pastel);
+    color: var(--color-info);
+}
+
+.card-orange {
+    background-color: var(--color-orange-pastel);
+    color: var(--color-orange);
+}
+
+.card-purple {
+    background-color: var(--color-purple-pastel);
+    color: var(--color-purple);
+}
+
+.card-pink {
+    background-color: var(--color-pink-pastel);
+    color: var(--color-pink);
+}
+
+/* ==========================================
+   COLORES DE BOTONES Y FONDOS
+   ========================================== */
+.boton-accent,
+.boton-danger,
+.boton-primary,
+.boton-secondary,
+.boton-success,
+.boton-info,
+.boton-purple,
+.boton-pink,
+.boton-orange,
+.boton-dark {
+    color: white;
+}
+
+.boton-warning {
+    color: black;
+}
+
+.boton-accent,
+.bg-accent {
+    background-color: var(--color-accent);
+}
+
+.bg-dashboard {
+    background-color: var(--color-sidebar-bg);
+}
+
+.boton-secundario,
+.bg-secundario {
+    background-color: var(--color-secundario);
+}
+
+.boton-danger,
+.bg-danger {
+    background-color: var(--color-danger);
+}
+
+.bg-danger-light{
+    background-color: var(--color-danger-pastel);
+}
+
+.boton-primary,
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.boton-secondary,
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.boton-success,
+.bg-success {
+    background-color: var(--color-success);
+    color: white;
+}
+
+.boton-warning,
+.bg-warning {
+    background-color: var(--color-warning);
+    color: black;
+}
+
+.boton-info,
+.bg-info {
+    background-color: var(--color-info);
+    border-color: var(--color-info);
+}
+
+.boton-purple,
+.bg-purple {
+    background-color: var(--color-purple);
+}
+
+.boton-pink,
+.bg-pink {
+    background-color: var(--color-pink);
+}
+
+.boton-orange,
+.bg-orange {
+    background-color: var(--color-orange);
+}
+
+.boton-light,
+.bg-light {
+    background-color: var(--color-light);
+    color: var(--color-text);
+}
+
+.boton-dark,
+.bg-dark {
+    background-color: var(--color-dark);
+}
+
+.bg-sidebar {
+    background-color: var(--color-sidebar-bg);
+    color: var(--color-text);
+}
+
+/* HOVERS SOLO PARA BOTONES */
+.boton-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.boton-secondary:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+.boton-success:hover {
+    background-color: var(--color-success-hover);
+}
+
+.boton-danger:hover {
+    background-color: var(--color-danger-hover);
+}
+
+.boton-purple:hover {
+    background-color: var(--color-purple-hover);
+}
+
+.boton-pink:hover {
+    background-color: var(--color-pink-hover);
+}
+
+.boton-orange:hover {
+    background-color: var(--color-orange-hover);
+}
+
+.boton-warning:hover {
+    background-color: var(--color-warning-hover);
+    color: var(--color-text);
+    /* se mantiene legible */
+}
+
+.boton-info:hover {
+    background-color: var(--color-info-hover);
+    border-color: var(--color-info-hover);
+}
+
+.boton-light:hover {
+    background-color: var(--color-light-hover);
+    color: var(--color-text);
+}
+
+.boton-dark:hover {
+    background-color: var(--color-dark-hover);
+}
+
+.boton-modal-close {
+    background-color: var(--color-dark-inverse);
+    color: var(--color-normal);
+}
+
+.text-base {
+    color: var(--color-text);
+}
+
+.text-base-inverted {
+    color: var(--color-bw-inverted);
+}
+
+.text-soft {
+    color: var(--color-text-soft);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-secundario {
+    color: var(--color-secundario);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-danger {
+    color: var(--color-danger);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.text-info {
+    color: var(--color-info);
+}
+
+.text-purple {
+    color: var(--color-purple);
+}
+
+.text-orange {
+    color: var(--color-orange);
+}
+
+.text-pink {
+    color: var(--color-pink);
+}
+
+.text-black {
+    color: var(--color-bw);
+}
+
+.text-muted {
+    color: var(--color-muted);
+}
+
+.text-link {
+    color: var(--color-text-link);
+}
+
+.text-link:hover {
+    color: var(--color-primario);
+    text-decoration: underline;
+}
