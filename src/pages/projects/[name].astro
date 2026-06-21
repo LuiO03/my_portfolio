@@ -18,9 +18,15 @@ export async function getStaticPaths() {
 	}));
 }
 
+
+
 const { project, name } = Astro.props;
 
 const images = project.data.gallery ?? [];
+
+import { marked } from "marked";
+
+const html = marked(project.data.content ?? "");
 
 import "../../styles/name-proyecto.css";
 ---
@@ -32,7 +38,6 @@ import "../../styles/name-proyecto.css";
 				<h1 transition:name={`${project.id}-title`}>
 					{project.data.title}
 				</h1>
-				<p>{project.data.description}</p>
 				<div class="banner-buttons">
 					<a href={project.data.github} class="button bg-dark" target="_blank" rel="noopener noreferrer">
 						<Icon name="tabler:brand-github-filled" class="button-icon" />
@@ -49,14 +54,14 @@ import "../../styles/name-proyecto.css";
 	<Section title="" description="" is_background_alt={true}>
 		<div class="project-section-content">
 			<div class="project-section-info">
-				<h1>Información</h1>
+				<h1>Descripción General</h1>
 				<p>{project.data.description}</p>
 			</div>
 			<img src={project.data.image} alt={project.data.title} transition:name={name} />
 		</div>
 	</Section>
-	<Section title={`Detalles de ${project.data.title}`} description="">
-		<p>{project.data.content}</p>
+	<Section title="" description="">
+		<div class="project-content" set:html={html}></div>
 	</Section>
 	<Section title="Galería" description="Aquí puedes ver algunas capturas de pantalla del proyecto." is_background_alt={true}>
 		<div class="swiper">

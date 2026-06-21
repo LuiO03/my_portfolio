@@ -1,6 +1,9 @@
 ---
 title: POS ModaMarket
-description: Página
+description:
+  ModaMarket es un sistema web orientado a la gestión y comercialización de prendas de vestir. El proyecto fue desarrollado utilizando PHP y una arquitectura MVC personalizada, permitiendo administrar productos, categorías, marcas e imágenes desde un panel administrativo intuitivo.
+
+  El objetivo principal del sistema es facilitar la organización del catálogo de productos y ofrecer una experiencia moderna tanto para administradores como para clientes.
 image: /images/projects/modamarket/img01.jpg
 gallery:
   - /images/projects/modamarket/img01.jpg
@@ -11,13 +14,6 @@ demo: https://...
 tags: ["PHP", "Html", "Css"]
 
 content: |
-
-  ## Descripción General
-
-  ModaMarket es un sistema web orientado a la gestión y comercialización de prendas de vestir. El proyecto fue desarrollado utilizando PHP y una arquitectura MVC personalizada, permitiendo administrar productos, categorías, marcas e imágenes desde un panel administrativo intuitivo.
-
-  El objetivo principal del sistema es facilitar la organización del catálogo de productos y ofrecer una experiencia moderna tanto para administradores como para clientes.
-
   ## Características Principales
 
   - Gestión completa de productos.
@@ -41,4 +37,5 @@ content: |
   - Bootstrap
   - Arquitectura MVC personalizada
 ---
+
 Aquí puedes escribir toda la información del proyecto usando Markdown.
