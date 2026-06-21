@@ -9,30 +9,18 @@ const { limit } = Astro.props;
 
 const projects = await getCollection("projects");
 
-const visibleProjects = limit
-	? projects.slice(0, limit)
-	: projects;
-
+const visibleProjects = limit ? projects.slice(0, limit) : projects;
 
 // Obtener todas las imágenes de proyectos
-const allImages = import.meta.glob(
-	"/src/assets/projects/*/*.{jpg,jpeg,png,webp}",
-	{
-		eager: true,
-		query: "?url",
-		import: "default",
-	}
-) as Record<string, string>;
-
+const allImages = import.meta.glob("/src/assets/projects/*/*.{jpg,jpeg,png,webp}", {
+	eager: true,
+	query: "?url",
+	import: "default",
+}) as Record<string, string>;
 
 // Función para obtener la imagen principal del proyecto
 function getProjectImage(projectId: string) {
-	return (
-		Object.entries(allImages)
-			.find(([path]) =>
-				path.includes(`/projects/${projectId}/`)
-			)?.[1] ?? ""
-	);
+	return Object.entries(allImages).find(([path]) => path.includes(`/projects/${projectId}/`))?.[1] ?? "";
 }
 ---
 
@@ -43,37 +31,22 @@ function getProjectImage(projectId: string) {
 
 			return (
 				<li class="project-item">
-
-					<a
-						href={`/projects/${project.id}`}
-						transition:name={`${project.id}-title`}
-						class="project-title"
-					>
+					<a href={`/projects/${project.id}`} transition:name={`${project.id}-title`} class="project-title">
 						{project.data.title}
 					</a>
 
 					<div class="project-image">
-
-						<img
-							src={projectImage}
-							alt={project.data.title}
-							transition:name={project.id}
-						/>
+						<img src={projectImage} alt={project.data.title} transition:name={project.id} />
 
 						<div class="project-info">
-							{
-								project.data.tags?.map((tag) => (
-									<span
-										class={`project-tag ${tag.toLowerCase()}`}
-									>
-										{tag}
-									</span>
-								))
-							}
+							<div class="project-tags">
+								{project.data.tags?.map((tag) => (
+									<span class={`project-tag ${tag.toLowerCase()}`}>{tag}</span>
+								))}
+							</div>
+							<p class="project-description">{project.data.short_description}</p>
 						</div>
-
 					</div>
-
 				</li>
 			);
 		})

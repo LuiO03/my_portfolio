@@ -30,11 +30,13 @@ const allImages = import.meta.glob("/src/assets/projects/*/*.{jpg,jpeg,png,webp}
 	import: "default",
 }) as Record<string, string>;
 
-const galleryImages = Object.entries(allImages)
+const projectImages = Object.entries(allImages)
 	.filter(([path]) => path.includes(`/projects/${project.id}/`))
 	.map(([, image]) => image);
 
-const projectImage = galleryImages[0];
+const projectImage = projectImages[0];
+
+const galleryImages = projectImages.slice(1);
 
 const html = marked(project.data.content ?? "");
 ---
@@ -65,7 +67,9 @@ const html = marked(project.data.content ?? "");
 				<h2>Descripción General</h2>
 				<p>{project.data.description}</p>
 			</div>
-			<img class="project-section-content-img" src={projectImage} alt={project.data.title} transition:name={name} />
+			<div class="project-section-content-img">
+				<img src={projectImage} alt={project.data.title} transition:name={name} />
+			</div>
 		</div>
 	</Section>
 	<Section title="" description="">
@@ -106,10 +110,12 @@ const html = marked(project.data.content ?? "");
 		</div>
 	</Section>
 
-	<a href="/projects" class="button bg-warning">
-		<Icon name="tabler:arrow-left" class="button-icon" />
-		Volver a Proyectos
-	</a>
+	<div class="project-navigation">
+		<a href="/projects" class="button bg-warning">
+			<Icon name="tabler:arrow-left" class="button-icon" />
+			Volver a Proyectos
+		</a>
+	</div>
 
 	<script>
 		import Swiper from "swiper";

@@ -9,6 +9,7 @@ const projects = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
+    short_description: z.string().optional(),
     description: z.string(),
     image: z.string().optional(),
     github: z.string().optional(),

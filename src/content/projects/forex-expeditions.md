@@ -1,13 +1,43 @@
 ---
 title: Forex Expeditions
-description: Página web desarrollado con Html y css
+
+short_description: Página web informativa para una empresa de turismo.
+
+description:
+  Forex Expeditions es una página web informativa desarrollada para presentar servicios relacionados con el mercado financiero Forex. El proyecto fue creado utilizando HTML y CSS, aplicando una estructura visual moderna, organizada y adaptable a diferentes dispositivos.
+
+  El objetivo principal del sitio es ofrecer una presentación clara de la información, mejorar la experiencia del usuario mediante una interfaz atractiva y demostrar la implementación de diseños web responsivos utilizando tecnologías frontend.
+
 image: /images/projects/forex-expeditions/img01.jpg
+
 gallery:
   - /images/projects/forex-expeditions/img01.jpg
   - /images/projects/forex-expeditions/img02.jpg
   - /images/projects/forex-expeditions/img03.jpg
+
 github: https://github.com/LuiO03/forex.github.io
+
 demo: https://LuiO03.github.io/forex.github.io
-tags: ["JavaScript", "Html", "Css"]
+
+tags: ["Html", "Css"]
+
+content: |
+  ## Características Principales
+
+  - Diseño web moderno y adaptable.
+  - Estructura organizada mediante HTML5 semántico.
+  - Estilos personalizados utilizando CSS3.
+  - Diseño responsivo para diferentes tamaños de pantalla.
+  - Secciones informativas con una distribución visual clara.
+  - Implementación de componentes visuales reutilizables.
+  - Optimización de estilos para mejorar la experiencia del usuario.
+
+  ## Tecnologías Utilizadas
+
+  - HTML5
+  - CSS3
+  - Diseño Responsive
+  - GitHub Pages
 ---
-Aquí puedes escribir toda la información del proyecto usando Markdown.
+
+---
