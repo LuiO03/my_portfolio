@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components";
+import "../styles/components/contact-section.css";
+import Section from "./Section.astro";
+import "../styles/components/section.css";
+---
+
+<Section id="contact">
+	<div class="contact-container">
+		<div class="contact-info">
+			<div class="contact-content">
+				<div class="contact-content-text">
+					<h2>¿Tienes un proyecto en mente?</h2>
+					<p>Estoy disponible para colaborar en proyectos web, desarrollo de sistemas, landing pages, tiendas virtuales y soluciones personalizadas.</p>
+				</div>
+
+				<div class="contact-image">
+					<img src="/images/enviar-correo.png" alt="Luis Quispe Osorio" />
+				</div>
+
+				<div class="contact-cards">
+					<div class="contact-card">
+						<Icon name="tabler:mail" />
+						<div>
+							<h5>Email</h5>
+							<span>correo@ejemplo.com</span>
+						</div>
+					</div>
+
+					<div class="contact-card">
+						<Icon name="tabler:phone" />
+						<div>
+							<h5>Teléfono</h5>
+							<span>+51 922 616 232</span>
+						</div>
+					</div>
+
+					<div class="contact-card">
+						<Icon name="tabler:map-pin" />
+						<div>
+							<h5>Ubicación</h5>
+							<span>Perú</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="contact-socials">
+					<a href="https://github.com/LuiO03" target="_blank">
+						<Icon name="tabler:brand-github-filled" />
+					</a>
+
+					<a href="#" target="_blank">
+						<Icon name="tabler:brand-linkedin-filled" />
+					</a>
+
+					<a href="#" target="_blank">
+						<Icon name="tabler:brand-facebook-filled" />
+					</a>
+
+					<a href="https://wa.me/51922616232" target="_blank">
+						<Icon name="tabler:brand-whatsapp-filled" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<form class="contact-form">
+			<div class="form-group">
+				<label for="name">Nombre</label>
+				<input type="text" id="name" name="name" placeholder="Tu nombre" required />
+			</div>
+
+			<div class="form-group">
+				<label for="email">Correo electrónico</label>
+				<input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
+			</div>
+
+			<div class="form-group">
+				<label for="company">Empresa (Opcional)</label>
+				<input type="text" id="company" name="company" placeholder="Nombre de tu empresa" />
+			</div>
+
+			<div class="form-group">
+				<label for="subject">Asunto</label>
+				<input type="text" id="subject" name="subject" placeholder="¿En qué puedo ayudarte?" required />
+			</div>
+
+			<div class="form-group">
+				<label for="message">Mensaje</label>
+				<textarea id="message" name="message" rows="6" placeholder="Cuéntame más sobre tu proyecto..." required></textarea>
+			</div>
+
+			<button type="submit" class="button bg-accent">
+				<Icon name="tabler:send" class="button-icon" />
+				Enviar mensaje
+			</button>
+		</form>
+	</div>
+</Section>

@@ -1,15 +1,16 @@
 ---
 interface Props {
+	id?: string;
 	title?: string;
 	description?: string;
 	is_background_alt?: boolean;
 }
 
-const { title, description, is_background_alt } = Astro.props;
+const { id, title, description, is_background_alt } = Astro.props;
 import "../styles/components/section.css";
 ---
 
-<section class="section" style={`background-color: ${is_background_alt ? 'var(--color-main-bg-alt)' : 'var(--color-main-bg)'};`}>
+<section class="section" id={id} style={`background-color: ${is_background_alt ? 'var(--color-main-bg-alt)' : 'var(--color-main-bg)'};`}>
 	<div class="section-container">
 		<div class="section-header">
 			<h2>{title}</h2>

@@ -1,9 +1,80 @@
 ---
-    import "../styles/components/footer.css";
+import { Icon } from "astro-icon/components";
+import "../styles/components/footer.css";
 ---
 
-<footer>
-  <p>
-    &copy; {new Date().getFullYear()} Mi Portafolio. Todos los derechos reservados.
-  </p>
+<footer class="footer" id="contact">
+	<div class="footer-container">
+
+		<div class="footer-brand">
+			<div class="footer-logo">
+				<h3>LuiOsorio</h3>
+			</div>
+
+			<p>
+				Desarrollador Web enfocado en la creación de aplicaciones modernas,
+				funcionales y escalables utilizando tecnologías frontend y backend.
+			</p>
+
+			
+		</div>
+
+		<div class="footer-links">
+			<h4>Navegación</h4>
+
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="#about">Sobre mí</a></li>
+				<li><a href="#specialties">Especialidades</a></li>
+				<li><a href="#projects">Proyectos</a></li>
+				<li><a href="#technologies">Tecnologías</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-tech">
+			<h4>Tecnologías</h4>
+
+			<ul>
+				<li>PHP & Laravel</li>
+				<li>Astro</li>
+				<li>JavaScript</li>
+				<li>MySQL</li>
+				<li>Firebase</li>
+				<li>Flutter</li>
+			</ul>
+		</div>
+
+		<div class="footer-contact">
+			<h4>Mis Redes Sociales</h4>
+
+			<div class="footer-socials">
+				<a href="https://github.com/LuiO03" target="_blank" aria-label="GitHub">
+					<Icon name="tabler:brand-github-filled" />
+				</a>
+
+				<a href="#" target="_blank" aria-label="LinkedIn">
+					<Icon name="tabler:brand-linkedin-filled" />
+				</a>
+
+				<a href="#" target="_blank" aria-label="Facebook">
+					<Icon name="tabler:brand-facebook-filled" />
+				</a>
+
+				<a href="https://wa.me/922616232" target="_blank" aria-label="WhatsApp">
+					<Icon name="tabler:brand-whatsapp-filled" />
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer-bottom">
+		<p>
+			© {new Date().getFullYear()} LuiOsorio. Desarrollador Web. Todos los derechos reservados.
+		</p>
+
+		<a href="#" class="footer-top">
+			<Icon name="tabler:arrow-up" />
+		</a>
+	</div>
 </footer>

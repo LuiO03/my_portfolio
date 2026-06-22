@@ -7,10 +7,9 @@ const currentPath = Astro.url.pathname;
 <div class="navbar-content">
 	<!-- div para implementar ancho maximo -->
 	<div class="nav-header">
-		<img src="/images/foto.png" alt="Logo" />
 		<a class="logo" href="/">LuiOsorio</a>
+		<img src="/images/foto.png" alt="Logo" />
 	</div>
-	<hr class="nav-divider" />
 	<ul class="nav-links">
 		<li>
 			<a href="/" class={currentPath === "/" ? "active" : "disabled"}>
@@ -19,45 +18,50 @@ const currentPath = Astro.url.pathname;
 			</a>
 		</li>
 		<li>
-			<a href="/about" class={currentPath === "/about" ? "active" : "disabled"}>
+			<a href="/#about" class={currentPath === "/about" ? "active" : "disabled"}>
 				<Icon class="nav-icon" name="tabler:user" />
 				Sobre mí
 			</a>
 		</li>
 		<li>
-			<a href="/projects" class={currentPath === "/projects" ? "active" : "disabled"}>
+			<a href="/#specialties" class={currentPath === "/specialties" ? "active" : "disabled"}>
+				<Icon class="nav-icon" name="tabler:code" />
+				Especialidades
+			</a>
+		</li>
+		<li>
+			<a href="/#projects" class={currentPath === "/projects" ? "active" : "disabled"}>
 				<Icon class="nav-icon" name="tabler:briefcase" />
 				Proyectos
 			</a>
 		</li>
 		<li>
-			<a href="/contact" class={currentPath === "/contact" ? "active" : "disabled"}>
-				<Icon class="nav-icon" name="tabler:mail" />
-				Contacto
+			<a href="/#technologies" class={currentPath === "/technologies" ? "active" : "disabled"}>
+				<Icon class="nav-icon" name="tabler:devices" />
+				Tecnologías
 			</a>
 		</li>
-		<li>
-			<a href="/probar404" class={currentPath === "/probar404" ? "active" : "disabled"}>
-				<Icon class="nav-icon" name="tabler:alert-circle" />
-				Probar 404
-			</a>
-		</li>
+		<a href="/#contact" class="button bg-success">
+			<Icon name="tabler:send" class="button-icon" />
+			Contáctame
+		</a>
 	</ul>
 	<div class="nav-overlay" aria-hidden="true"></div>
 	<hr class="nav-divider" />
 	<article class="nav-actions">
 		<div class="nav-theme-toggle" aria-label="Cambiar tema" id="theme-toggle">
-			<Icon class="nav-icon-theme" name="tabler:moon-filled" />
+			<Icon class="nav-icon-theme" name="tabler:moon" />
 			<label for="theme-toggle">Cambiar tema</label>
 		</div>
-		<button id="userSidebarToggle" class="nav-icon-hamburger" aria-label="Abrir menú de usuario">
-			<span class="hamburger-line"></span>
-			<span class="hamburger-line"></span>
-			<span class="hamburger-line"></span>
-		</button>
+		<div class="nav-theme-toggle">
+			<button id="userSidebarToggle" class="nav-icon-hamburger" aria-label="Abrir menú de usuario">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+		</div>
 	</article>
 </div>
-
 
 <script>
 	function initThemeToggle() {

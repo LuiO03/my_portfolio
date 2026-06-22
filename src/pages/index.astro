@@ -2,12 +2,13 @@
 import Section from "../components/Section.astro";
 import { Icon } from "astro-icon/components";
 import MainLayout from "../layouts/MainLayout.astro";
-import Banner from "../components/Banner.astro";
+import ContactSection from "../components/ContactSection.astro";
 import ProjectList from "../components/ProjectList.astro";
 import "../styles/home.css";
 ---
 
 <MainLayout title="Inicio">
+	
 	<Fragment slot="header">
 		<section class="hero">
 			<video class="hero-video" autoplay muted loop playsinline>
@@ -25,15 +26,25 @@ import "../styles/home.css";
 
 					<p>Desarrollador web enfocado en crear aplicaciones modernas, funcionales y escalables utilizando tecnologías frontend y backend.</p>
 
+					<div class="hero-buttons">
+						<!-- CV -->
+						<a href="/documents/CV_QuispeOsorioLuisAlberto.pdf" target="_blank" class="button bg-accent">
+							<Icon name="tabler:file-text-filled" class="button-icon" />
+							Ver CV
+						</a>
+						<!-- Github -->
+						<a href="https://github.com/LuiO03" target="_blank" class="button bg-dark">
+							<Icon name="tabler:brand-github-filled" class="button-icon" />
+							Ver GitHub
+						</a>
+						<!-- LinkedIn -->
+						<a href="https://linkedin.com/in/luiO03" target="_blank" class="button bg-info">
+							<Icon name="tabler:brand-linkedin-filled" class="button-icon" />
+							Ver LinkedIn
+						</a>
+					</div>
+
 					<div class="hero-socials">
-						<a href="https://github.com/LuiO03" target="_blank" aria-label="GitHub">
-							<Icon name="tabler:brand-github-filled" />
-						</a>
-
-						<a href="#" target="_blank" aria-label="LinkedIn">
-							<Icon name="tabler:brand-linkedin-filled" />
-						</a>
-
 						<a href="#" target="_blank" aria-label="Facebook">
 							<Icon name="tabler:brand-facebook-filled" />
 						</a>
@@ -42,23 +53,16 @@ import "../styles/home.css";
 							<Icon name="tabler:brand-whatsapp-filled" />
 						</a>
 					</div>
-
-					<div class="hero-buttons">
-						<a href="/projects" class="button bg-accent">
-							<Icon name="tabler:rocket" class="button-icon" />
-							Ver Portafolio
-						</a>
-					</div>
 				</div>
 
 				<div class="hero-image">
-					<img src="/images/foto.png" alt="Luis Quispe Osorio" />
+					<img src="/images/foto-sin-fondo.png" alt="Luis Quispe Osorio" />
 				</div>
 			</div>
 		</section>
 	</Fragment>
 
-	<Section title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
+	<Section id="about" title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
 		<p>
 			Soy un desarrollador apasionado por la tecnología y el desarrollo de software. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes.
 			Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que marquen la diferencia.
@@ -73,7 +77,7 @@ import "../styles/home.css";
 		</p>
 	</Section>
 
-	<Section
+	<Section id="specialties"
 		title="Especialidades"
 		description="Me especializo en el desarrollo de aplicaciones web modernas utilizando tecnologías como React, Node.js y bases de datos SQL y NoSQL."
 		is_background_alt={true}
@@ -99,7 +103,7 @@ import "../styles/home.css";
 		</div>
 	</Section>
 
-	<Section title="Mis Proyectos" description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
+	<Section id="projects" title="Mis Proyectos" description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
 		<ProjectList limit={3} />
 		<a href="/projects" class="button bg-accent">
 			<Icon name="tabler:eye-filled" class="button-icon" />
@@ -107,7 +111,7 @@ import "../styles/home.css";
 		</a>
 	</Section>
 
-	<Section title="Tecnologías" description="Tecnologías y herramientas que utilizo." is_background_alt={true}>
+	<Section id="technologies" title="Tecnologías" description="Tecnologías y herramientas que utilizo." is_background_alt={true}>
 		<div class="tech-group">
 			<h3>Frontend</h3>
 
@@ -339,4 +343,6 @@ import "../styles/home.css";
 
 		initTechSwiper();
 	</script>
+	<ContactSection />
+	
 </MainLayout>
