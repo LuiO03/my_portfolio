@@ -3,7 +3,7 @@ title: Forex Expeditions
 
 short_description: Página web informativa para una empresa de turismo.
 
-description:
+description: |
   Forex Expeditions es una página web informativa desarrollada para presentar servicios relacionados con el mercado financiero Forex. El proyecto fue creado utilizando HTML y CSS, aplicando una estructura visual moderna, organizada y adaptable a diferentes dispositivos.
 
   El objetivo principal del sitio es ofrecer una presentación clara de la información, mejorar la experiencia del usuario mediante una interfaz atractiva y demostrar la implementación de diseños web responsivos utilizando tecnologías frontend.
@@ -32,12 +32,13 @@ content: |
   - Implementación de componentes visuales reutilizables.
   - Optimización de estilos para mejorar la experiencia del usuario.
 
-  ## Tecnologías Utilizadas
+technologies:
+  - name: HTML5
+    icon: html
 
-  - HTML5
-  - CSS3
-  - Diseño Responsive
-  - GitHub Pages
----
+  - name: JavaScript
+    icon: brand-javascript
 
+  - name: CSS3
+    icon: brand-css3
 ---

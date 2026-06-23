@@ -155,3 +155,26 @@
 	margin-bottom: 0.5rem;
     font-size: var(--font-size-p);
 }
+
+.technologies{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.technologies .tech{
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: var(--color-card-bg);
+	border-radius: var(--radius-card);
+}
+
+.technologies .tech-icon{
+	font-size: 1.5rem;
+}
+
+.technologies span{
+	font-size: var(--font-size-p);
+}

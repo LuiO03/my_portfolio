@@ -1,7 +1,6 @@
-
 :root {
-    --box-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
-    --box-shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+	--box-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
+	--box-shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
 
 	--max-width: 1024px;
 
@@ -66,6 +65,7 @@
 	--color-navbar-bg: #20252c;
 	--color-main-bg: #0e0e10;
 	--color-main-bg-alt: #212121;
+	--color-main-degraded-bg: linear-gradient(to bottom, #0e0e10 0%, #212121 50%, #0e0e10 100%);
 	--color-card-bg: #1a1a1a;
 	--color-sub-menu-bg: #111111;
 	--color-sub-menu-button-bg: #212121;
@@ -158,18 +158,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-	height: 100dvh;
-	overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+	body {
+		height: 100dvh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 main {
 	height: 100dvh;
 	overflow-y: scroll;
-	
 }
 
 body,

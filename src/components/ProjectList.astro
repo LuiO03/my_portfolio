@@ -34,7 +34,7 @@ function getProjectImage(projectId: string) {
 					<div class="project-image">
 						<img src={projectImage} alt={project.data.title} transition:name={project.id} />
 
-						<a href={`/projects/${project.id}`} class="project-info">
+						<div class="project-info">
 							<span transition:name={`${project.id}-title`} class="project-title">
 								{project.data.title}
 							</span>
@@ -44,7 +44,10 @@ function getProjectImage(projectId: string) {
 								))}
 							</div>
 							<p class="project-description">{project.data.short_description}</p>
-						</a>
+							<a href={`/projects/${project.id}`} class="project-link">
+								Ver Proyecto
+							</a>
+						</div>
 					</div>
 				</li>
 			);

@@ -8,7 +8,6 @@ import "../styles/home.css";
 ---
 
 <MainLayout title="Inicio">
-	
 	<Fragment slot="header">
 		<section class="hero">
 			<video class="hero-video" autoplay muted loop playsinline>
@@ -77,7 +76,8 @@ import "../styles/home.css";
 		</p>
 	</Section>
 
-	<Section id="specialties"
+	<Section
+		id="specialties"
 		title="Especialidades"
 		description="Me especializo en el desarrollo de aplicaciones web modernas utilizando tecnologías como React, Node.js y bases de datos SQL y NoSQL."
 		is_background_alt={true}
@@ -111,196 +111,251 @@ import "../styles/home.css";
 		</a>
 	</Section>
 
+	
 	<Section id="technologies" title="Tecnologías" description="Tecnologías y herramientas que utilizo." is_background_alt={true}>
-		<div class="tech-group">
-			<h3>Frontend</h3>
+		<div class="technologies-container">
+			<div class="tech-group">
+				<h3>Frontend</h3>
 
-			<div class="swiper tech-swiper tech-swiper-front">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+				<div class="tech-items">
+					<div class="tech-item">
 						<Icon name="tabler:html" />
 						<span>HTML5</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:brand-css3" />
 						<span>CSS3</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:brand-javascript" />
 						<span>JavaScript</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:brand-typescript" />
 						<span>TypeScript</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:brand-astro" />
 						<span>Astro</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
+						<Icon name="tabler:brand-vue" />
+						<span>Vue.js</span>
+					</div>
+
+					<div class="tech-item">
 						<Icon name="tabler:brand-bootstrap" />
 						<span>Bootstrap</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:exchange" />
-						<span>HTMX</span>
+					<div class="tech-item">
+						<Icon name="tabler:brand-tailwind" />
+						<span>Tailwind CSS</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:arrows-shuffle" />
 						<span>AJAX</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:device-mobile" />
-						<span>Responsive Design</span>
-					</div>
-
-					<div class="swiper-slide">
-						<Icon name="tabler:apps" />
+					<div class="tech-item">
+						<Icon name="tabler:brand-flutter" />
 						<span>Flutter</span>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="tech-group">
-			<h3>Backend</h3>
+			<div class="tech-group">
+				<h3>CMS y Constructores Web</h3>
+				<div class="tech-items">
+					<div class="tech-item">
+						<Icon name="tabler:brand-wordpress" />
+						<span>WordPress</span>
+					</div>
+					<div class="tech-item">
+						<Icon name="tabler:letter-e" />
+						<span>Elementor</span>
+					</div>
+				</div>
+			</div>
 
-			<div class="swiper tech-swiper tech-swiper-back">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+			<div class="tech-group">
+				<h3>Hosting y Deploy</h3>
+				<div class="tech-items">
+					<div class="tech-item">
+						<Icon name="tabler:square-rotated-asterisk" />
+						<span>Netlify</span>
+					</div>
+					<div class="tech-item">
+						<Icon name="tabler:brand-vercel" />
+						<span>Vercel</span>
+					</div>
+					<div class="tech-item">
+						<Icon name="tabler:letter-h" />
+						<span>Hostinger</span>
+					</div>
+
+					<div class="tech-item">
+						<Icon name="tabler:circle" />
+						<span>Digital Ocean</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tech-group">
+				<h3>Backend</h3>
+
+				<div class="tech-items">
+					<div class="tech-item">
 						<Icon name="tabler:brand-php" />
 						<span>PHP</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:brand-laravel" />
 						<span>Laravel</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:layout-dashboard" />
 						<span>MVC</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:api" />
 						<span>REST API</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:arrows-shuffle" />
 						<span>AJAX</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:exchange" />
-						<span>HTMX</span>
-					</div>
-
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:shield-lock" />
 						<span>CSRF</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:packages" />
 						<span>Composer</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:file-code" />
 						<span>OOP</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:database-cog" />
 						<span>CRUD</span>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="tech-group">
-			<h3>Base de Datos</h3>
+			<div class="tech-group">
+				<h3>Base de Datos</h3>
 
-			<div class="swiper tech-swiper tech-swiper-db">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<Icon name="tabler:database" />
+				<div class="tech-items">
+					<div class="tech-item">
+						<Icon name="tabler:brand-mysql" />
 						<span>MySQL</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:flame" />
 						<span>Firebase</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:table" />
-						<span>SQL</span>
-					</div>
-
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:relation-many-to-many" />
 						<span>Modelado Relacional</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:database-export" />
 						<span>Consultas SQL</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:database-cog" />
 						<span>Procedimientos CRUD</span>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="tech-group">
-			<h3>Diseño y Edición</h3>
+			<div class="tech-group">
+				<h3>Herramientas y Control de Versiones</h3>
+				<div class="tech-items">
+					<div class="tech-item">
+						<Icon name="tabler:brand-git" />
+						<span>Git</span>
+					</div>
 
-			<div class="swiper tech-swiper tech-swiper-design">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<Icon name="tabler:vector" />
+					<div class="tech-item">
+						<Icon name="tabler:brand-github" />
+						<span>GitHub</span>
+					</div>
+
+					<div class="tech-item">
+						<Icon name="tabler:brand-vscode" />
+						<span>Visual Studio Code</span>
+					</div>
+
+					<div class="tech-item">
+						<Icon name="tabler:user" />
+						<span>Postman</span>
+					</div>
+					<div class="tech-item">
+						<Icon name="tabler:brand-docker" />
+						<span>Docker</span>
+					</div>
+					<div class="tech-item">
+						<Icon name="tabler:brand-mysql" />
+						<span>MySQL Workbench</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tech-group">
+				<h3>Diseño y Edición</h3>
+
+				<div class="tech-items">
+					<div class="tech-item">
+						<Icon name="tabler:brand-figma" />
 						<span>Figma</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:photo" />
+					<div class="tech-item">
+						<Icon name="tabler:brand-adobe-photoshop" />
 						<span>Photoshop</span>
 					</div>
 
-					<div class="swiper-slide">
-						<Icon name="tabler:brush" />
+					<div class="tech-item">
+						<Icon name="tabler:brand-adobe-illustrator" />
 						<span>Illustrator</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:palette" />
 						<span>UI Design</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:device-desktop" />
 						<span>Wireframing</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:components" />
 						<span>Prototipado</span>
 					</div>
 
-					<div class="swiper-slide">
+					<div class="tech-item">
 						<Icon name="tabler:layout-dashboard" />
 						<span>Diseño Responsive</span>
 					</div>
@@ -308,41 +363,6 @@ import "../styles/home.css";
 			</div>
 		</div>
 	</Section>
-	<script>
-		import Swiper from "swiper";
-		import { Autoplay, FreeMode } from "swiper/modules";
 
-		interface SwiperHTMLElement extends HTMLElement {
-			swiper?: Swiper;
-		}
-
-		function initTechSwiper() {
-			document.querySelectorAll<SwiperHTMLElement>(".tech-swiper").forEach((el, index) => {
-				if (el.swiper) {
-					el.swiper.destroy(true, true);
-				}
-				new Swiper(el, {
-					freeMode: true,
-					modules: [Autoplay],
-					slidesPerView: "auto",
-					spaceBetween: 16,
-					loopAdditionalSlides: 20,
-					loop: true,
-					speed: 5000,
-					allowTouchMove: false,
-					autoplay: {
-						delay: 0,
-						reverseDirection: false,
-						disableOnInteraction: false,
-					},
-				});
-			});
-		}
-
-		document.addEventListener("astro:page-load", initTechSwiper);
-
-		initTechSwiper();
-	</script>
 	<ContactSection />
-	
 </MainLayout>

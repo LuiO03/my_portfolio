@@ -33,6 +33,9 @@
 .section-header h2{
 }
 
+
+/* === Lista de Proyectos === */
+
 .project-list{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -134,4 +137,22 @@
 }
 .project-tag.laravel{
     background-color: #ff2d20;
+}
+
+.project-link{
+    background-color: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-button);
+    font-size: var(--font-size-sm);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+.project-link:hover{
+    color: #fff;
+}
+
+.project-link:active{
+    transform: scale(0.95);
 }

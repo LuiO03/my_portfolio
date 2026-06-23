@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import Banner from "../../components/Banner.astro";
 import Section from "../../components/Section.astro";
+import ContactSection from "../../components/ContactSection.astro";
 import { Icon } from "astro-icon/components";
 import { marked } from "marked";
 
@@ -38,7 +39,8 @@ const projectImage = projectImages[0];
 
 const galleryImages = projectImages.slice(1);
 
-const html = marked(project.data.content ?? "");
+const description_html = marked(project.data.description ?? "");
+const content_html = marked(project.data.content ?? "");
 ---
 
 <MainLayout title={project.data.title}>
@@ -65,7 +67,7 @@ const html = marked(project.data.content ?? "");
 		<div class="project-section-content">
 			<div class="project-column-block">
 				<h2>Descripción General</h2>
-				<p>{project.data.description}</p>
+				<div class="project-content" set:html={description_html} />
 			</div>
 			<div class="project-section-content-img">
 				<img src={projectImage} alt={project.data.title} transition:name={name} />
@@ -74,7 +76,22 @@ const html = marked(project.data.content ?? "");
 	</Section>
 	<Section title="" description="">
 		<div class="project-section-content">
-			<div class="project-content" set:html={html} />
+			<div>
+				<div class="project-content" set:html={content_html} />
+				<div class="project-column-block">
+					<h2> Tecnologías Utilizadas </h2>
+					<div class="technologies">
+						{
+							project.data.technologies?.map((tech) => (
+								<div class="tech">
+									<Icon name={`tabler:${tech.icon}`} class="tech-icon" />
+									<span>{tech.name}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
 			<div class="project-column-block">
 				<div class="project-section-info">
 					<h2>Galería</h2>
@@ -172,4 +189,5 @@ const html = marked(project.data.content ?? "");
 
 		initProjectGallery();
 	</script>
+	<ContactSection />
 </MainLayout>
