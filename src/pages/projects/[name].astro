@@ -6,6 +6,7 @@ import Section from "../../components/Section.astro";
 import ContactSection from "../../components/ContactSection.astro";
 import { Icon } from "astro-icon/components";
 import { marked } from "marked";
+import "photoswipe/style.css";
 
 import "../../styles/name-proyecto.css";
 
@@ -25,15 +26,34 @@ export async function getStaticPaths() {
 
 const { project, name } = Astro.props;
 
+interface ProjectImage {
+	src: string;
+	width: number;
+	height: number;
+	path: string;
+}
+
 const allImages = import.meta.glob("/src/assets/projects/*/*.{jpg,jpeg,png,webp}", {
 	eager: true,
-	query: "?url",
-	import: "default",
-}) as Record<string, string>;
+}) as Record<
+	string,
+	{
+		default: {
+			src: string;
+			width: number;
+			height: number;
+		};
+	}
+>;
 
-const projectImages = Object.entries(allImages)
+const projectImages: ProjectImage[] = Object.entries(allImages)
 	.filter(([path]) => path.includes(`/projects/${project.id}/`))
-	.map(([, image]) => image);
+	.map(([path, image]) => ({
+		path,
+		src: image.default.src,
+		width: image.default.width,
+		height: image.default.height,
+	}));
 
 const projectImage = projectImages[0];
 
@@ -59,6 +79,14 @@ const content_html = marked(project.data.content ?? "");
 						<Icon name="tabler:external-link" class="button-icon" />
 						Ver Demo
 					</a>
+					{
+						project.data.figma && (
+							<a href={project.data.figma} class="button bg-success" target="_blank" rel="noopener noreferrer">
+								<Icon name="tabler:brand-figma" class="button-icon" />
+								Ver Figma
+							</a>
+						)
+					}
 				</div>
 			</div>
 		</Banner>
@@ -70,7 +98,7 @@ const content_html = marked(project.data.content ?? "");
 				<div class="project-content" set:html={description_html} />
 			</div>
 			<div class="project-section-content-img">
-				<img src={projectImage} alt={project.data.title} transition:name={name} />
+				<img src={projectImage.src} alt={project.data.title} transition:name={name} />
 			</div>
 		</div>
 	</Section>
@@ -79,7 +107,7 @@ const content_html = marked(project.data.content ?? "");
 			<div>
 				<div class="project-content" set:html={content_html} />
 				<div class="project-column-block">
-					<h2> Tecnologías Utilizadas </h2>
+					<h2>Tecnologías Utilizadas</h2>
 					<div class="technologies">
 						{
 							project.data.technologies?.map((tech) => (
@@ -97,32 +125,38 @@ const content_html = marked(project.data.content ?? "");
 					<h2>Galería</h2>
 					<p>Aquí puedes ver algunas capturas de pantalla del proyecto.</p>
 				</div>
-				<div class="swiper project-gallery-main">
-					<div class="swiper-wrapper">
-						{
-							galleryImages.map((image) => (
-								<div class="swiper-slide">
-									<img src={image} alt={`Captura de ${project.data.title}`} />
-								</div>
-							))
-						}
-					</div>
+				{
+					galleryImages.length > 0 && (
+						<div class="swiper project-gallery-main">
+							<div class="swiper-wrapper">
+								{galleryImages.map((image) => (
+									<div class="swiper-slide">
+										<a href={image.src} data-pswp-width={image.width} data-pswp-height={image.height}>
+											<img src={image.src} alt={`Captura de ${project.data.title}`} />
+										</a>
+									</div>
+								))}
+							</div>
 
-					<div class="swiper-pagination"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-				<div class="swiper project-gallery-thumbs">
-					<div class="swiper-wrapper">
-						{
-							galleryImages.map((image) => (
-								<div class="swiper-slide">
-									<img src={image} alt={`Miniatura de ${project.data.title}`} loading="lazy" />
-								</div>
-							))
-						}
-					</div>
-				</div>
+							<div class="swiper-pagination" />
+							<div class="swiper-button-prev" />
+							<div class="swiper-button-next" />
+						</div>
+					)
+				}
+				{
+					galleryImages.length > 0 && (
+						<div class="swiper project-gallery-thumbs">
+							<div class="swiper-wrapper">
+								{galleryImages.map((image) => (
+									<div class="swiper-slide">
+										<img src={image.src} alt={`Miniatura de ${project.data.title}`} loading="lazy" />
+									</div>
+								))}
+							</div>
+						</div>
+					)
+				}
 			</div>
 		</div>
 	</Section>
@@ -188,6 +222,32 @@ const content_html = marked(project.data.content ?? "");
 		document.addEventListener("astro:page-load", initProjectGallery);
 
 		initProjectGallery();
+
+		import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+		let lightbox: PhotoSwipeLightbox | null = null;
+
+		function initPhotoSwipe() {
+			if (lightbox) {
+				lightbox.destroy();
+			}
+
+			lightbox = new PhotoSwipeLightbox({
+				gallery: ".project-gallery-main",
+				children: "a",
+				pswpModule: () => import("photoswipe"),
+			});
+
+			lightbox.init();
+		}
+
+		document.addEventListener("astro:page-load", () => {
+			initProjectGallery();
+			initPhotoSwipe();
+		});
+
+		initProjectGallery();
+		initPhotoSwipe();
 	</script>
 	<ContactSection />
 </MainLayout>
