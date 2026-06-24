@@ -11,7 +11,7 @@ const projects = defineCollection({
     title: z.string(),
     short_description: z.string().optional(),
     description: z.string(),
-    image: z.string().optional(),
+    logo: z.string().optional(),
     github: z.string().optional(),
     demo: z.string().optional(),
     figma: z.string().optional(),

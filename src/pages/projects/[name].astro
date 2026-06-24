@@ -59,6 +59,9 @@ const projectImage = projectImages[0];
 
 const galleryImages = projectImages.slice(1);
 
+const projectLogo = projectImages.find((image) => image.path.includes("/logo."));
+
+
 const description_html = marked(project.data.description ?? "");
 const content_html = marked(project.data.content ?? "");
 ---
@@ -67,6 +70,7 @@ const content_html = marked(project.data.content ?? "");
 	<Fragment slot="header">
 		<Banner bannerImage="/images/banner-home.jpg" transition:name={name}>
 			<div class="banner-content">
+				<!-- {projectLogo && <img src={projectLogo.src} alt={`Logo de ${project.data.title}`} class="project-logo" />} -->
 				<h1 transition:name={`${project.id}-title`}>
 					{project.data.title}
 				</h1>
@@ -98,7 +102,8 @@ const content_html = marked(project.data.content ?? "");
 				<div class="project-content" set:html={description_html} />
 			</div>
 			<div class="project-section-content-img">
-				<img src={projectImage.src} alt={project.data.title} transition:name={name} />
+				
+				<img src={projectImage.src} alt={project.data.title} transition:name={name} class="project-image" />
 			</div>
 		</div>
 	</Section>

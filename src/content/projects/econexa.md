@@ -12,7 +12,7 @@ description: |
 
   Este proyecto demuestra conocimientos sólidos en desarrollo backend con PHP, diseño de bases de datos relacionales, buenas prácticas de programación orientada a objetos y construcción de paneles administrativos profesionales.
 
-image: /images/projects/econexa/img01.png
+logo: /images/projects/econexa/logo.png
 
 github: https://github.com/LuiO03/inventario_de_productos
 

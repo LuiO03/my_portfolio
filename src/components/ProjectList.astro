@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 interface Props {
@@ -31,22 +32,44 @@ function getProjectImage(projectId: string) {
 
 			return (
 				<li class="project-item">
-					<div class="project-image">
+					<a class="project-image" href={`/projects/${project.id}/`}>
 						<img src={projectImage} alt={project.data.title} transition:name={project.id} />
-
-						<div class="project-info">
-							<span transition:name={`${project.id}-title`} class="project-title">
+						<div class="project-overlay" />
+					</a>
+					<div class="project-info">
+						<div class="project-details">
+							<a transition:name={`${project.id}-title`} class="project-title" href={`/projects/${project.id}/`}>
 								{project.data.title}
-							</span>
+							</a>
 							<div class="project-tags">
-								{project.data.tags?.map((tag) => (
-									<span class={`project-tag ${tag.toLowerCase()}`}>{tag}</span>
+								{project.data.technologies?.map((tech) => (
+									<div class="project-tag">
+										<Icon name={`tabler:${tech.icon}`} class="tag-icon" />
+										<span class="tag-name">{tech.name}</span>
+									</div>
 								))}
 							</div>
 							<p class="project-description">{project.data.short_description}</p>
-							<a href={`/projects/${project.id}`} class="project-link">
-								Ver Proyecto
-							</a>
+						</div>
+						<div class="project-links">
+							{project.data.github && (
+								<a href={project.data.github} target="_blank" rel="noopener noreferrer" class="button bg-dark">
+									<Icon name="tabler:brand-github" class="button-icon" />
+									GitHub
+								</a>
+							)}
+							{project.data.demo && (
+								<a href={project.data.demo} target="_blank" rel="noopener noreferrer" class="button bg-orange">
+									<Icon name="tabler:player-play" class="button-icon" />
+									Demo
+								</a>
+							)}
+							{project.data.figma && (
+								<a href={project.data.figma} target="_blank" rel="noopener noreferrer" class="button bg-success">
+									<Icon name="tabler:brand-figma" class="button-icon" />
+									Figma
+								</a>
+							)}
 						</div>
 					</div>
 				</li>

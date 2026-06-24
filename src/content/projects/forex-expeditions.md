@@ -8,7 +8,7 @@ description: |
 
   El objetivo principal del sitio es ofrecer una presentación clara de la información, mejorar la experiencia del usuario mediante una interfaz atractiva y demostrar la implementación de diseños web responsivos utilizando tecnologías frontend.
 
-image: /images/projects/forex-expeditions/img01.jpg
+logo: /images/projects/forex-expeditions/logo.jpg
 
 github: https://github.com/LuiO03/forex.github.io
 
