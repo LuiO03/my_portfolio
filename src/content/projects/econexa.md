@@ -16,7 +16,7 @@ image: /images/projects/econexa/img01.png
 
 github: https://github.com/LuiO03/inventario_de_productos
 
-demo: https://econexa.lovestoblog.com/inventario_de_productos/
+demo: https://iconexa.infinityfreeapp.com/auth/login
 
 tags: ["Html", "Css", "JavaScript", "PHP", "MySQL", "Bootstrap"]
 

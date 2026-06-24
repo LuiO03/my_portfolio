@@ -4,10 +4,17 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
+    width: 100%;
 }
 
 .banner-buttons{
+    width: 100%;
+    gap: 0.5rem;
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.banner-buttons .button{
+    
 }
