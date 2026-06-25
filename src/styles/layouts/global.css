@@ -22,7 +22,7 @@
 	--color-border-secondary: #342e37;
 
 	/* === Colores de acento y efectos === */
-	--color-accent: #3d31b2;
+	--color-accent: #d11e4b;
 	--color-accent-pastel: #b2f0ff;
 	--shadow-accent: rgba(61, 49, 178, 0.25);
 	--color-hover: #f9f9f9;
@@ -80,7 +80,7 @@
 	--color-muted: #aaaaaa;
 
 	/* === Colores de acento y efectos === */
-	--color-accent: #d11e4b;
+	
 	--color-accent-pastel: #ffe5e5;
 	--shadow-accent: rgba(209, 30, 75, 0.3);
 	--color-hover: #212121;
@@ -169,6 +169,7 @@ body {
 main {
 	height: 100dvh;
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
 body,

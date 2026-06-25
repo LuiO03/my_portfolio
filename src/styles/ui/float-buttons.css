@@ -1,0 +1,108 @@
+.float-buttons-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: flex-end;
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	z-index: 200;
+}
+
+.go-top-float-btn,
+.whatsapp-float-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	font-size: 2.2rem;
+	outline: none;
+	border-radius: 50px;
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease,
+		background-color 0.25s ease,
+		box-shadow 0.25s ease,
+		filter 0.25s ease;
+}
+
+.go-top-float-btn {
+	width: fit-content;
+	padding: 0.7rem 1rem;
+	background: var(--color-card-bg);
+	font-family: var(--font-secondary);
+	font-weight: bold;
+	color: var(--color-text);
+	box-shadow: var(--box-shadow-card);
+	opacity: 0;
+}
+
+.go-top-float-btn.visible {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0) scale(1);
+}
+
+.go-top-float-btn:hover {
+	box-shadow: var(--box-shadow-card-hover);
+	filter: brightness(1.06);
+}
+
+.go-top-float-btn:active {
+	transform: translateY(0) scale(0.97);
+}
+
+.go-top-float-btn .btn-icon {
+	font-size: var(--font-size-h2);
+	line-height: 1;
+}
+
+.go-top-float-btn .btn-label {
+	font-size: var(--font-size-p);
+	white-space: nowrap;
+}
+
+/* móvil */
+
+@media (max-width: 768px) {
+	.go-top-float-btn {
+		width: 60px;
+		height: 60px;
+		min-height: 54px;
+		padding: 0;
+		border-radius: 50%;
+	}
+
+	.go-top-float-btn .btn-label {
+		display: none;
+	}
+}
+
+/* ==========================================
+    BOTÓN FLOTANTE WHATSAPP
+========================================== */
+.whatsapp-float-btn {
+	width: 60px;
+	height: 60px;
+	text-decoration: none;
+	background: #25d366;
+	color: white;
+	box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-float-btn:hover {
+	box-shadow: var(--box-shadow-card-hover);
+	background: var(--color-success);
+	color: white;
+	box-shadow: 0 14px 40px rgba(37, 211, 102, 0.45);
+}
+
+@media (max-width: 768px) {
+	.float-buttons-container {
+		right: 10px;
+		bottom: 10px;
+	}
+}

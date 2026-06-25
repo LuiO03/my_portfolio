@@ -59,9 +59,6 @@ const projectImage = projectImages[0];
 
 const galleryImages = projectImages.slice(1);
 
-const projectLogo = projectImages.find((image) => image.path.includes("/logo."));
-
-
 const description_html = marked(project.data.description ?? "");
 const content_html = marked(project.data.content ?? "");
 ---
@@ -79,8 +76,8 @@ const content_html = marked(project.data.content ?? "");
 						<Icon name="tabler:brand-github-filled" class="button-icon" />
 						Ver Repositorio
 					</a>
-					<a href={project.data.demo} class="button bg-orange" target="_blank" rel="noopener noreferrer">
-						<Icon name="tabler:external-link" class="button-icon" />
+					<a href={project.data.demo} class="button bg-info" target="_blank" rel="noopener noreferrer">
+						<Icon name="tabler:player-play-filled" class="button-icon" />
 						Ver Demo
 					</a>
 					{

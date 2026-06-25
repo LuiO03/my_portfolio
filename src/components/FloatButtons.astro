@@ -1,64 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	whatsappUrl: string;
+}
+
+const { whatsappUrl } = Astro.props;
+
+import "../styles/ui/float-buttons.css";
+---
+
 <div class="float-buttons-container">
-    <button
-        type="button"
-        class="go-top-float-btn"
-        id="goTopFloatBtn"
-        title="Ir arriba"
-        aria-label="Ir arriba">
+	<button type="button" class="go-top-float-btn" id="goTopFloatBtn" aria-label="Volver al inicio" title="Volver al inicio">
+		<Icon name="tabler:arrow-up" class="btn-icon" />
+		<span class="btn-label">Ir arriba</span>
+	</button>
 
-        <i class="ri-arrow-up-s-line"></i>
-        <span class="btn-label">Ir arriba</span>
-    </button>
-    <a
-        href="{{ $whatsappUrl }}"
-        class="whatsapp-float-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp"
-    >
-        <i class="ri-whatsapp-line"></i>
-    </a>
+	<a href={whatsappUrl} class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Contactar por WhatsApp">
+		<Icon name="tabler:brand-whatsapp" class="btn-icon" />
+	</a>
 </div>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('goTopFloatBtn');
+	(() => {
+		const btn = document.getElementById("goTopFloatBtn");
+		const main = document.querySelector("main");
 
-    if (!btn) return;
+		if (!btn || !main) return;
 
-    let lastScroll = 0;
-    let ticking = false;
+		let lastScroll = 0;
+		let ticking = false;
 
-    function updateButton() {
-        const y = window.scrollY || window.pageYOffset;
+		const updateButton = () => {
+			const y = main.scrollTop;
 
-        if (y < 250) {
-            btn.classList.remove('visible');
-        } else if (y > lastScroll + 8) {
-            btn.classList.add('visible');
-        } else if (y < lastScroll - 8) {
-            btn.classList.remove('visible');
-        }
+			if (y < 250) {
+				btn.classList.remove("visible");
+			} else if (y > lastScroll + 8) {
+				btn.classList.add("visible");
+			} else if (y < lastScroll - 8) {
+				btn.classList.remove("visible");
+			}
 
-        lastScroll = y;
-    }
+			lastScroll = y;
+		};
 
-    window.addEventListener('scroll', function () {
-        if (!ticking) {
-            requestAnimationFrame(function () {
-                updateButton();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+		main.addEventListener(
+			"scroll",
+			() => {
+				if (!ticking) {
+					requestAnimationFrame(() => {
+						updateButton();
+						ticking = false;
+					});
 
-    btn.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+					ticking = true;
+				}
+			},
+			{ passive: true },
+		);
 
-    updateButton();
-});
+		btn.addEventListener("click", () => {
+			main.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		});
+
+		updateButton();
+	})();
 </script>

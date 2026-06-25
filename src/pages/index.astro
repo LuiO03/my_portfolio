@@ -63,7 +63,7 @@ import "../styles/home.css";
 
 	<Section id="about" title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
 		<p>
-			Soy un desarrollador apasionado por la tecnología y el desarrollo de software. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes.
+			Soy un desarrollador apasionado por la tecnología y el desarrollo de web. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes.
 			Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que marquen la diferencia.
 		</p>
 		<p>
@@ -105,10 +105,12 @@ import "../styles/home.css";
 
 	<Section id="projects" title="Mis Proyectos" description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
 		<ProjectList limit={6} />
-		<a href="/projects" class="button bg-accent">
-			<Icon name="tabler:eye-filled" class="button-icon" />
-			Ver todos los proyectos
-		</a>
+		<div class="project-navigation">
+			<a href="/projects" class="button bg-accent">
+				<Icon name="tabler:eye-filled" class="button-icon" />
+				Ver todos los proyectos
+			</a>
+		</div>
 	</Section>
 
 	
@@ -299,11 +301,6 @@ import "../styles/home.css";
 					<div class="tech-item">
 						<Icon name="tabler:brand-github" />
 						<span>GitHub</span>
-					</div>
-
-					<div class="tech-item">
-						<Icon name="tabler:brand-vscode" />
-						<span>Visual Studio Code</span>
 					</div>
 
 					<div class="tech-item">

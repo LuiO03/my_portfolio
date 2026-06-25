@@ -76,6 +76,7 @@
 
 .navbar-content .button {
 	justify-content: flex-start;
+	width: 100%;
 }
 
 .nav-actions {
