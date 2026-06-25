@@ -7,7 +7,7 @@ description: |
   El objetivo principal del sistema es facilitar la organización del catálogo de productos y ofrecer una experiencia moderna tanto para administradores como para clientes.
 logo: img01.jpg
 github: https://github.com/LuiO03/ModaMarket
-demo: https://...
+demo: https://modamarket.infinityfreeapp.com/
 tags: ["PHP", "Html", "Css"]
 
 content: |
