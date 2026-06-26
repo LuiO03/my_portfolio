@@ -43,7 +43,7 @@
     width: 100%;
     overflow: hidden;
     border-radius: var(--radius-card);
-    border-top: 3px solid transparent;
+    
     background: var(--color-card-bg);
     box-shadow: var(--box-shadow-card);
     transition:
@@ -70,6 +70,14 @@
     width: 340px;
     aspect-ratio: 16/9;
     overflow: hidden;
+    border: 3px solid transparent;
+    border-radius: var(--radius-card) 0px 0px var(--radius-card);
+    transition: border-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.project-item:hover .project-image {
+    border-color: var(--color-accent);
+    border-radius: var(--radius-card);
 }
 
 .project-image img {

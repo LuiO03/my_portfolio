@@ -14,7 +14,7 @@ description: |
 
 logo: /images/projects/modamarket-pos/logo.png
 
-github: https://github.com/LuiO03/ModaMarket_POS
+github: https://github.com/LuiO03/POS-ModaMarket-Java
 
 demo: ""
 

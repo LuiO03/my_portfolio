@@ -174,10 +174,16 @@
 	padding: 0.5rem 1rem;
 	background: var(--color-card-bg);
 	border-radius: var(--radius-card);
+	transition: transform 0.3s ease;
 }
 
+.technologies .tech:hover{
+	background: var(--color-hover);
+	transform: scale(0.95);
+}	
+
 .technologies .tech-icon{
-	font-size: 1.5rem;
+	font-size: var(--font-size-h3);
 }
 
 .technologies span{

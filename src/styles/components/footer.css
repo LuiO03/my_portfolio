@@ -59,15 +59,13 @@
 	text-decoration: none;
 	color: inherit;
 	font-size: var(--font-size-p);
-	transition: color 0.3s ease, font-weight 0.3s ease;
+	transition: font-weight 0.3s ease;
 }
 
 .footer-links a:hover, .footer-tech li:hover {
 	color: var(--color-accent);
 	font-weight: bold;
 }
-
-
 
 .footer-contact {
 	display: flex;
@@ -95,8 +93,8 @@
 	border-radius: 50%;
 	border: 1px solid var(--color-border);
 	font-size: 1.25rem;
-	transition: 0.3s;
-	color: white;
+	transition: transform 0.3s ease;
+	color: var(--color-text);
 }
 
 .footer-socials a:hover {
@@ -130,7 +128,6 @@
 	border-radius: 50%;
 	background: var(--color-accent);
 	color: white;
-	transition: 0.3s;
 }
 
 .footer-top:hover {
