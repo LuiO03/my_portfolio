@@ -1,12 +1,18 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Section from '../components/Section.astro';
-import { Icon } from 'astro-icon/components';
-import ProjectList from '../components/ProjectList.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+import { Icon } from "astro-icon/components";
+import ProjectList from "../components/ProjectList.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <MainLayout title="Proyectos">
-    <Section title="Observa todos mis proyectos" description="Aquí encontrarás una selección de mis trabajos más destacados. Desde aplicaciones web hasta proyectos de código abierto, cada uno refleja mi pasión por la tecnología y el desarrollo.">
+	<Section
+		title={`Observa todos mis proyectos (${projects.length})`}
+		description="Aquí encontrarás una selección de mis trabajos más destacados. Desde aplicaciones web hasta proyectos de código abierto, cada uno refleja mi pasión por la tecnología y el desarrollo."
+	>
 		<ProjectList />
 		<div class="project-navigation">
 			<a href="/" class="button bg-success">

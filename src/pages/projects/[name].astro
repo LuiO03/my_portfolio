@@ -72,14 +72,19 @@ const content_html = marked(project.data.content ?? "");
 					{project.data.title}
 				</h1>
 				<div class="banner-buttons">
-					<a href={project.data.github} class="button bg-secondary" target="_blank" rel="noopener noreferrer">
+					<a href={project.data.github} class="button bg-dark" target="_blank" rel="noopener noreferrer">
 						<Icon name="tabler:brand-github-filled" class="button-icon" />
 						Ver Repositorio
 					</a>
-					<a href={project.data.demo} class="button bg-info" target="_blank" rel="noopener noreferrer">
-						<Icon name="tabler:player-play-filled" class="button-icon" />
-						Ver Demo
-					</a>
+					<!-- si existe el demo, mostrar el botón -->
+					{
+						project.data.demo && (
+							<a href={project.data.demo} class="button bg-info" target="_blank" rel="noopener noreferrer">
+								<Icon name="tabler:player-play-filled" class="button-icon" />
+								Ver Demo
+							</a>
+						)
+					}
 					{
 						project.data.figma && (
 							<a href={project.data.figma} class="button bg-success" target="_blank" rel="noopener noreferrer">

@@ -163,11 +163,13 @@
 	gap: 1rem;
 	text-align: center;
 	border-bottom: 3px solid transparent;
+	z-index: 150;
 }
 
 .specialty:hover {
 	border-color: var(--color-accent);
 	background: radial-gradient(circle at center, rgba(var(--color-accent-rgb), 0.25) 0%, var(--color-card-bg) 100%);
+	z-index: 150;
 }
 
 .specialty .specialty-icon {
@@ -209,6 +211,7 @@
 	gap: 0.5rem;
 	padding: 0.5rem 1rem;
 	font-weight: 500;
+	color: white;
 	border-radius: var(--radius-card);
 }
 
@@ -229,7 +232,7 @@
 
 .tech-item.javascript {
 	background-color: #f0db4f;
-	color: black;
+	color: black !important;
 }
 
 .tech-item.typescript {
@@ -326,7 +329,7 @@
 
 .tech-item.firebase {
 	background-color: #ffca28;
-	color: black;
+	color: black !important;
 }
 
 /*=== Herramientas y Control de Versiones ===*/
@@ -392,7 +395,7 @@
 	background: var(--color-card-bg);
 	border-bottom: 3px solid transparent;
 	border-radius: var(--radius-card);
-	padding: 1rem;
+	padding: 1.25rem;
 	overflow: hidden;
 	transition: transform .3s ease;
 	box-shadow: var(--box-shadow-card);
@@ -448,7 +451,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.75rem;
-	border-radius: var(--radius-input);
+	border-radius: var(--radius-button);
 	background: var(--color-bg);
 	z-index: 50;
 	transition: 

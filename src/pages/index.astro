@@ -4,172 +4,14 @@ import { Icon } from "astro-icon/components";
 import MainLayout from "../layouts/MainLayout.astro";
 import ContactSection from "../components/ContactSection.astro";
 import ProjectList from "../components/ProjectList.astro";
+import { getCollection } from "astro:content";
 import "../styles/home.css";
+
+const projects = await getCollection("projects");
 ---
 
 <MainLayout title="Inicio">
-	<Section id="knowledge" title="Conocimientos y Buenas Prácticas" description="Principios, arquitecturas y metodologías que aplico en el desarrollo de software.">
-		<div class="knowledge-container">
-			<div class="knowledge-group">
-				<h3>Diseño y Experiencia de Usuario</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:users" />
-						<span>Análisis de usuarios</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:layout" />
-						<span>Diseño de interfaces UI</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:device-mobile" />
-						<span>Diseño responsive</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:palette" />
-						<span>Sistemas de diseño</span>
-					</li>
-				</ul>
-			</div>
-			<div class="knowledge-group">
-				<h3>Arquitectura y Patrones</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:layout-dashboard" />
-						<span>Arquitectura MVC</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:components" />
-						<span>Componentización</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:layers-subtract" />
-						<span>Separación de responsabilidades</span>
-					</li>
-				</ul>
-			</div>
-
-			<div class="knowledge-group">
-				<h3>Backend y APIs</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:api" />
-						<span>REST API</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:database" />
-						<span>CRUD</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:code-circle" />
-						<span>Programación Orientada a Objetos</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:route" />
-						<span>Arquitectura por capas</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:alert-circle" />
-						<span>Manejo de errores</span>
-					</li>
-				</ul>
-			</div>
-
-			<div class="knowledge-group">
-				<h3>Seguridad Web</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:shield-lock" />
-						<span>Protección CSRF</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:lock-password" />
-						<span>Validación y sanitización</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:key" />
-						<span>Autenticación y autorización</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:password" />
-						<span>Hashing de contraseñas</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:code-off" />
-						<span>Prevención XSS</span>
-					</li>
-				</ul>
-			</div>
-
-			<div class="knowledge-group">
-				<h3>Base de Datos</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:relation-many-to-many" />
-						<span>Modelado relacional</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:database-search" />
-						<span>Consultas SQL</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:arrows-sort" />
-						<span>Optimización básica</span>
-					</li>
-					<li class="knowledge-item">
-						<Icon name="tabler:git-merge" />
-						<span>Relaciones y normalización</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:table-options" />
-						<span>Migraciones de BD</span>
-					</li>
-				</ul>
-			</div>
-			<div class="knowledge-group">
-				<h3>Control de Versiones</h3>
-
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:brand-github" />
-						<span>Git y GitHub</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:git-branch" />
-						<span>Flujo de ramas</span>
-					</li>
-
-					<li class="knowledge-item">
-						<Icon name="tabler:history" />
-						<span>Control de cambios</span>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</Section>
-	<!-- 
+	
 	<Fragment slot="header">
 		<section class="hero">
 			<video class="hero-video" autoplay muted loop playsinline>
@@ -215,7 +57,6 @@ import "../styles/home.css";
 			</div>
 		</section>
 	</Fragment>
--->
 	<Section id="about" title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
 		<p>
 			Soy un desarrollador apasionado por la tecnología y el desarrollo de web. Con experiencia en diversas tecnologías, me encanta crear soluciones innovadoras y eficientes. Mi
@@ -258,7 +99,7 @@ import "../styles/home.css";
 		</div>
 	</Section>
 
-	<Section id="projects" title="Mis Proyectos" description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
+	<Section id="projects" title={`Mis Proyectos (${projects.length})`} description="Aquí puedes encontrar algunos de los proyectos en los que he trabajado recientemente.">
 		<ProjectList limit={6} />
 		<div class="project-navigation">
 			<a href="/projects" class="button bg-accent">
@@ -449,6 +290,167 @@ import "../styles/home.css";
 						<span>Canva</span>
 					</div>
 				</div>
+			</div>
+		</div>
+	</Section>
+	<Section id="knowledge" title="Conocimientos y Buenas Prácticas" description="Principios, arquitecturas y metodologías que aplico en el desarrollo de software.">
+		<div class="knowledge-container">
+			<div class="knowledge-group">
+				<h3>Diseño y Experiencia de Usuario</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:users" />
+						<span>Análisis de usuarios</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:layout" />
+						<span>Diseño de interfaces UI</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:device-mobile" />
+						<span>Diseño responsive</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:palette" />
+						<span>Sistemas de diseño</span>
+					</li>
+				</ul>
+			</div>
+			<div class="knowledge-group">
+				<h3>Arquitectura y Patrones</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:layout-dashboard" />
+						<span>Arquitectura MVC</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:components" />
+						<span>Componentización</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:layers-subtract" />
+						<span>Separación de responsabilidades</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="knowledge-group">
+				<h3>Backend y APIs</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:api" />
+						<span>REST API</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:database" />
+						<span>CRUD</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:code-circle" />
+						<span>Programación Orientada a Objetos</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:route" />
+						<span>Arquitectura por capas</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:alert-circle" />
+						<span>Manejo de errores</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="knowledge-group">
+				<h3>Seguridad Web</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:shield-lock" />
+						<span>Protección CSRF</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:lock-password" />
+						<span>Validación y sanitización</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:key" />
+						<span>Autenticación y autorización</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:password" />
+						<span>Hashing de contraseñas</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:code-off" />
+						<span>Prevención XSS</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="knowledge-group">
+				<h3>Base de Datos</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:relation-many-to-many" />
+						<span>Modelado relacional</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:database-search" />
+						<span>Consultas SQL</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:arrows-sort" />
+						<span>Optimización básica</span>
+					</li>
+					<li class="knowledge-item">
+						<Icon name="tabler:git-merge" />
+						<span>Relaciones y normalización</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:table-options" />
+						<span>Migraciones de BD</span>
+					</li>
+				</ul>
+			</div>
+			<div class="knowledge-group">
+				<h3>Control de Versiones</h3>
+
+				<ul class="knowledge-items">
+					<li class="knowledge-item">
+						<Icon name="tabler:brand-github" />
+						<span>Git y GitHub</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:git-branch" />
+						<span>Flujo de ramas</span>
+					</li>
+
+					<li class="knowledge-item">
+						<Icon name="tabler:history" />
+						<span>Control de cambios</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</Section>

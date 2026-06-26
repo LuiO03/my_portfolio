@@ -71,6 +71,11 @@ function getProjectImage(projectId: string) {
 								</a>
 							)}
 						</div>
+
+						<a class="project-arrow" href={`/projects/${project.id}/`}>
+							<span class="project-arrow-text">Ver más detalles </span>
+							<Icon name="tabler:arrow-right" class="project-arrow-icon" />
+						</a>
 					</div>
 				</li>
 			);

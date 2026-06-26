@@ -35,23 +35,21 @@ main,
 	animation: move linear infinite;
 	will-change: transform;
 }
-
+/*
 .ball:nth-child(odd) {
 	color: #d11e4b;
 }
 .ball:nth-child(even) {
 	color: #3d31b2;
-}
+}*/
 
-/* Colores únicos */
-/*.ball:nth-child(1) { color: var(--color-primary); }   /* Coral */
-/*.ball:nth-child(2) { color: var(--color-secundario); }   /* Azul cielo */
-/*.ball:nth-child(3) { color: var(--color-success); }   /* Verde menta */
-/*.ball:nth-child(4) { color: var(--color-warning); }   /* Amarillo */
-/*.ball:nth-child(5) { color: var(--color-danger); }   /* Rojo */
-/*.ball:nth-child(6) { color: var(--color-info); }   /* Celeste */
+.ball:nth-child(1) { color: var(--color-primary); }   /* Coral */
+.ball:nth-child(2) { color: var(--color-secundario); }   /* Azul cielo */
+.ball:nth-child(3) { color: var(--color-success); }   /* Verde menta */
+.ball:nth-child(4) { color: var(--color-warning); }   /* Amarillo */
+.ball:nth-child(5) { color: var(--color-danger); }   /* Rojo */
+.ball:nth-child(6) { color: var(--color-info); }   /* Celeste */
 
-/* Ejemplo de bolas 
 .ball:nth-child(1) {
   width: 20vmin;
   height: 20vmin;
@@ -115,8 +113,8 @@ main,
   animation-delay: -8s;
   transform-origin: 16vw -2vh;
   box-shadow: 40vmin 0 5vmin currentColor;
-}*/
-
+}
+/* 
 .ball:nth-child(1) {
 	width: 20vmin;
 	height: 20vmin;
@@ -159,3 +157,4 @@ main,
 	transform-origin: 16vw -2vh;
 	box-shadow: 40vmin 0 5vmin currentColor;
 }
+*/
