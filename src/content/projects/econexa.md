@@ -18,8 +18,6 @@ github: https://github.com/LuiO03/inventario_de_productos
 
 demo: https://iconexa.infinityfreeapp.com/auth/login
 
-tags: ["Html", "Css", "JavaScript", "PHP", "MySQL", "Bootstrap"]
-
 content: |
   ## Descripción General
 
@@ -81,26 +79,26 @@ content: |
 
 technologies:
   - name: PHP
-    icon: brand-php
+    icon: simple-icons:php
 
   - name: MySQL
-    icon: database
+    icon: simple-icons:mysql
 
   - name: Bootstrap
-    icon: brand-bootstrap
+    icon: simple-icons:bootstrap
 
   - name: JavaScript
-    icon: brand-javascript
+    icon: simple-icons:javascript
 
   - name: HTML5
-    icon: html
+    icon: simple-icons:html5
 
   - name: CSS3
-    icon: brand-css3
+    icon: simple-icons:css
 
   - name: Git
-    icon: brand-git
+    icon: simple-icons:git
 
   - name: Composer
-    icon: package
+    icon: simple-icons:composer
 ---

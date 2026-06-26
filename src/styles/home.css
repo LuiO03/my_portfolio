@@ -45,11 +45,7 @@
 }
 
 .hero-info h1 {
-	background: linear-gradient(
-		to right,
-		var(--color-accent),
-		var(--color-bg)
-	);
+	background: linear-gradient(to right, var(--color-accent), var(--color-bg));
 	background: var(--color-accent);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -166,11 +162,12 @@
 	align-items: center;
 	gap: 1rem;
 	text-align: center;
-	border-bottom: 4px solid transparent;
+	border-bottom: 3px solid transparent;
 }
 
-.specialty:hover{
+.specialty:hover {
 	border-color: var(--color-accent);
+	background: radial-gradient(circle at center, rgba(var(--color-accent-rgb), 0.25) 0%, var(--color-card-bg) 100%);
 }
 
 .specialty .specialty-icon {
@@ -179,7 +176,7 @@
 	transition: transform 0.5s ease;
 }
 
-.specialty:hover .specialty-icon{
+.specialty:hover .specialty-icon {
 	transform: rotate(360deg);
 }
 
@@ -211,6 +208,266 @@
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.5rem 1rem;
-	background-color: var(--color-card-bg);
+	font-weight: 500;
 	border-radius: var(--radius-card);
+}
+
+.tech-items .tech-item .tech-icon {
+	font-size: var(--font-size-h3);
+	font-weight: bold;
+}
+
+/*=== Frontend ===*/
+
+.tech-item.html {
+	background-color: #e34c26;
+}
+
+.tech-item.css3 {
+	background-color: #264de4;
+}
+
+.tech-item.javascript {
+	background-color: #f0db4f;
+	color: black;
+}
+
+.tech-item.typescript {
+	background-color: #007acc;
+}
+
+.tech-item.astro {
+	background-color: #ff5a1f;
+}
+
+.tech-item.vue {
+	background-color: #42b883;
+}
+
+.tech-item.vite {
+	background-color: #646cff;
+}
+
+.tech-item.sass {
+	background-color: #cc6699;
+}
+
+.tech-item.bootstrap {
+	background-color: #563d7c;
+}
+
+.tech-item.tailwind {
+	background-color: #38bdf8;
+}
+
+.tech-item.ajax {
+	background-color: #f16529;
+}
+
+.tech-item.flutter {
+	background-color: #02569b;
+}
+
+/*=== CMS y Constructores Web ===*/
+
+.tech-item.wordpress {
+	background-color: #21759b;
+}
+
+.tech-item.elementor {
+	background-color: #0a0a0a;
+}
+
+/*=== Backend ===*/
+
+.tech-item.php {
+	background-color: #777bb3;
+}
+
+.tech-item.laravel {
+	background-color: #ff3427;
+}
+
+.tech-item.composer {
+	background-color: #000000;
+}
+
+.tech-item.java {
+	background-color: #b07219;
+}
+
+.tech-item.springboot {
+	background-color: #6db33f;
+}
+
+/*=== Hosting y Deploy ===*/
+
+.tech-item.netlify {
+	background-color: #2cc9b9;
+}
+
+.tech-item.vercel {
+	background-color: #000000;
+}
+
+.tech-item.hostinger {
+	background-color: #6c43e7;
+}
+
+.tech-item.digital-ocean {
+	background-color: #0085ff;
+}
+
+/*=== Base de Datos ===*/
+
+.tech-item.mysql {
+	background-color: #00758f;
+}
+
+.tech-item.firebase {
+	background-color: #ffca28;
+	color: black;
+}
+
+/*=== Herramientas y Control de Versiones ===*/
+
+.tech-item.git {
+	background-color: #f34f29;
+}
+
+.tech-item.github {
+	background-color: #211f1c;
+}
+
+.tech-item.postman {
+	background-color: #f0933c;
+}
+
+.tech-item.docker {
+	background-color: #2496ed;
+}
+
+.tech-item.mysql-workbench {
+	background-color: #00758f;
+}
+
+.tech-item.xampp {
+	background-color: #FB7E2B;
+}
+
+/*=== Diseño y Edición ===*/
+
+.tech-item.figma {
+	background-color: #f24e1e;
+}
+
+.tech-item.photoshop {
+	background-color: #31a8ff;
+}
+
+.tech-item.illustrator {
+	background-color: #ff9a00;
+}
+
+.tech-item.premiere {
+	background-color: #ff0000;
+}
+
+.tech-item.canva {
+	background-color: #00c4cc;
+}
+
+/* ================================
+   Knowledge Section
+================================ */
+
+.knowledge-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.knowledge-group {
+	position: relative;
+	background: var(--color-card-bg);
+	border-bottom: 3px solid transparent;
+	border-radius: var(--radius-card);
+	padding: 1rem;
+	overflow: hidden;
+	transition: transform .3s ease;
+	box-shadow: var(--box-shadow-card);
+	height: fit-content;
+}
+
+.knowledge-group::before {
+	content: "";
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	top: -90px;
+	right: -90px;
+	background: radial-gradient(
+		circle,
+		rgba(var(--color-accent-rgb), 0.5) 0%,
+		transparent 70%
+	);
+	opacity: 0;
+	transition: opacity .3s ease;
+}
+
+.knowledge-group:hover {
+	transform: translateY(-5px);
+	border-color: var(--color-accent);
+	box-shadow: var(--box-shadow-card-hover);
+}
+
+.knowledge-group:hover::before {
+	opacity: 1;
+}
+
+/* Título del grupo */
+.knowledge-group h3 {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	margin-bottom: 1.25rem;
+	font-size: 1.1rem;
+}
+
+/* Lista de conocimientos */
+.knowledge-items {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/* Item individual */
+.knowledge-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	border-radius: var(--radius-input);
+	background: var(--color-bg);
+	z-index: 50;
+	transition: 
+		transform .3s ease;
+}
+
+.knowledge-item svg {
+	width: 1.3rem;
+	height: 1.3rem;
+	color: var(--color-accent);
+	flex-shrink: 0;
+}
+
+.knowledge-item span {
+	font-size: .95rem;
+}
+
+/* Hover */
+.knowledge-item:hover {
+	background: var(--color-hover);
+	transform: translateX(5px);
 }

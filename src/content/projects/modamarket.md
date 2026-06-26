@@ -8,7 +8,6 @@ description: |
 logo: img01.jpg
 github: https://github.com/LuiO03/ModaMarket
 demo: https://modamarket.infinityfreeapp.com/
-tags: ["PHP", "Html", "Css"]
 
 content: |
   ## Características Principales
@@ -26,20 +25,20 @@ content: |
 
 technologies:
   - name: HTML5
-    icon: html
+    icon: simple-icons:html5
 
   - name: CSS3
-    icon: brand-css3
+    icon: simple-icons:css
 
   - name: JavaScript
-    icon: brand-javascript
+    icon: simple-icons:javascript
 
   - name: PHP
-    icon: brand-php
+    icon: simple-icons:php
 
   - name: MySQL
-    icon: database
+    icon: simple-icons:mysql
 
   - name: Bootstrap
-    icon: brand-bootstrap
+    icon: simple-icons:bootstrap
 ---

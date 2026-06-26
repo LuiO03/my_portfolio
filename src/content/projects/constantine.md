@@ -18,8 +18,6 @@ github: https://github.com/LuiO03/Constantine_SitioWeb
 
 demo: https://constantine.infinityfreeapp.com/
 
-tags: ["Html", "Css", "JavaScript", "PHP", "MySQL"]
-
 content: |
   ## Descripción General
 
@@ -92,20 +90,20 @@ content: |
 
 technologies:
   - name: PHP
-    icon: brand-php
+    icon: simple-icons:php
 
   - name: MySQL
-    icon: database
+    icon: simple-icons:mysql
 
   - name: JavaScript
-    icon: brand-javascript
+    icon: simple-icons:javascript
 
   - name: HTML5
-    icon: html
+    icon: simple-icons:html5
 
   - name: CSS3
-    icon: brand-css3
+    icon: simple-icons:css
 
   - name: Git
-    icon: brand-git
+    icon: simple-icons:git
 ---

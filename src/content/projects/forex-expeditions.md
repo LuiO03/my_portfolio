@@ -14,8 +14,6 @@ github: https://github.com/LuiO03/forex.github.io
 
 demo: https://LuiO03.github.io/forex.github.io
 
-tags: ["Html", "Css"]
-
 content: |
   ## Características Principales
 
@@ -29,11 +27,11 @@ content: |
 
 technologies:
   - name: HTML5
-    icon: html
-
-  - name: JavaScript
-    icon: brand-javascript
+    icon: simple-icons:html5
 
   - name: CSS3
-    icon: brand-css3
+    icon: simple-icons:css
+
+  - name: JavaScript
+    icon: simple-icons:javascript
 ---

@@ -6,10 +6,12 @@ description: |
 
   El proyecto permite la visualización dinámica del menú, filtrado por categorías, búsqueda de productos y organización del contenido para facilitar la navegación del cliente. Además, cuenta con una interfaz adaptable para dispositivos móviles y una estructura preparada para una futura integración con nuevas funcionalidades.
 logo: img02.jpg
+
 github: https://github.com/LuiO03/encuentro
+
 demo: https://encuentro.infinityfreeapp.com/
+
 figma: https://www.figma.com/design/8DUpilgpBv0zKUopDNhagL/Proyecto-Encuentro?m=auto&t=PZp1RlzPoeJ2LkJU-6
-tags: ["PHP", "JavaScript", "Ajax"]
 
 content: |
   ## Características Principales
@@ -27,23 +29,23 @@ content: |
 
 technologies:
   - name: HTML5
-    icon: html
+    icon: simple-icons:html5
 
   - name: CSS3
-    icon: brand-css3
+    icon: simple-icons:css
 
   - name: JavaScript
-    icon: brand-javascript
+    icon: simple-icons:javascript
 
   - name: PHP
-    icon: brand-php
+    icon: simple-icons:php
 
   - name: MySQL
-    icon: database
+    icon: simple-icons:mysql
 
   - name: AJAX
-    icon: refresh
+    icon: simple-icons:mysql
 
   - name: Bootstrap
-    icon: brand-bootstrap
+    icon: simple-icons:bootstrap
 ---

@@ -44,7 +44,7 @@ function getProjectImage(projectId: string) {
 							<div class="project-tags">
 								{project.data.technologies?.map((tech) => (
 									<div class="project-tag">
-										<Icon name={`tabler:${tech.icon}`} class="tag-icon" />
+										<Icon name={tech.icon} class="tag-icon" />
 										<span class="tag-name">{tech.name}</span>
 									</div>
 								))}

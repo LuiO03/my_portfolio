@@ -15,7 +15,6 @@ const projects = defineCollection({
     github: z.string().optional(),
     demo: z.string().optional(),
     figma: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     content: z.string().optional(),
     technologies: z.array(
       z.object({

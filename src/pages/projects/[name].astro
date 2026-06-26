@@ -72,7 +72,7 @@ const content_html = marked(project.data.content ?? "");
 					{project.data.title}
 				</h1>
 				<div class="banner-buttons">
-					<a href={project.data.github} class="button bg-dark" target="_blank" rel="noopener noreferrer">
+					<a href={project.data.github} class="button bg-secondary" target="_blank" rel="noopener noreferrer">
 						<Icon name="tabler:brand-github-filled" class="button-icon" />
 						Ver Repositorio
 					</a>
@@ -114,7 +114,7 @@ const content_html = marked(project.data.content ?? "");
 						{
 							project.data.technologies?.map((tech) => (
 								<div class="tech">
-									<Icon name={`tabler:${tech.icon}`} class="tech-icon" />
+									<Icon name={tech.icon} class="tech-icon" />
 									<span>{tech.name}</span>
 								</div>
 							))
