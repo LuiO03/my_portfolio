@@ -41,6 +41,12 @@ const currentPath = Astro.url.pathname;
 				Tecnologías
 			</a>
 		</li>
+		<li>
+			<a href="/#knowledge" class={currentPath === "/knowledge" ? "active" : "disabled"}>
+				<Icon class="nav-icon" name="tabler:book" />
+				Conocimientos
+			</a>
+		</li>
 		<a href="/#contact" class="button bg-success">
 			<Icon name="tabler:send" class="button-icon" />
 			Contáctame
