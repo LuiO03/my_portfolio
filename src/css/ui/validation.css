@@ -1,0 +1,298 @@
+/* ========================================
+   📋 VALIDATION STYLES
+   Estilos para validación frontend y backend
+   ======================================== */
+
+/* === Banner de errores de backend === */
+.form-error-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: var(--color-danger-pastel);
+    border-left: 4px solid var(--color-danger);
+    border-radius: var(--radius-element);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-error-banner .form-error-icon {
+    font-size: 1.5rem;
+    color: var(--color-danger);
+    margin-top: 2px;
+}
+
+.form-error-banner div {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.form-error-title {
+    font-family: var(--font-secondary);
+    font-weight: bolder;
+    color: var(--color-danger);
+}
+
+.form-error-banner ul {
+    margin: 4px 0px 0px 16px;
+    padding: 0px;
+    list-style-type: disc;
+}
+
+.form-error-banner p{
+    color: var(--color-text);
+    font-size: var(--font-size-xs);
+    height: 100%;
+}
+
+.form-error-banner li {
+    color: var(--color-text);
+    font-size: var(--font-size-xs);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   ❌ ESTADO DE ERROR (Frontend/Backend)
+   ======================================== */
+
+/* Input/Select con error */
+.input-error {
+    border-color: var(--color-danger) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.input-error:focus {
+    border-color: var(--color-danger) !important;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Icono de error en el input */
+.input-group:has(.input-error) .input-icon {
+    color: var(--color-danger) !important;
+}
+
+/* Flecha del select con error */
+.input-group:has(.input-error) .select-arrow {
+    color: var(--color-danger) !important;
+}
+
+.input-group:has(.input-error) .label-form i{
+    color: var(--color-danger) !important;
+}
+
+/* Mensaje de error inline */
+.input-error-message {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: -2px;
+    padding: 6px 10px;
+    /*
+    background: linear-gradient(90deg, var(--color-danger-pastel) 0%, rgba(239, 68, 68, 0) 100%);
+    */
+    background-color: var(--color-danger-pastel);
+    border-left: 3px solid var(--color-danger);
+    border-radius: var(--radius-element) var(--radius-input) var(--radius-input) var(--radius-element);
+    color: var(--color-danger);
+    font-size: var(--font-size-xs);
+    animation: shake 0.3s ease-in-out;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.input-error-message i {
+    font-size: 14px;
+    color: var(--color-danger);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ========================================
+   ✅ ESTADO DE ÉXITO (Frontend)
+   ======================================== */
+
+/* Input/Select válido */
+.input-success,
+select.input-success {
+    border-color: var(--color-success) !important;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15) !important; /* Aumentado opacidad */
+}
+
+.input-success:focus,
+select.input-success:focus {
+    border-color: var(--color-success) !important;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15) !important; /* Aumentado opacidad */
+}
+
+/* Icono de éxito en el input */
+.input-group:has(.input-success) .input-icon,
+.input-group:has(select.input-success) .input-icon {
+    color: var(--color-success) !important;
+}
+
+/* Flecha del select con éxito */
+.input-group:has(.input-success) .select-arrow,
+.input-group:has(select.input-success) .select-arrow {
+    color: var(--color-success) !important;
+}
+
+.input-group:has(.input-success) .label-form i{
+    color: var(--color-success) !important;
+}
+
+/* Icono de check de validación */
+.validation-check-icon {
+    position: absolute;
+    right: -10px;
+    top: 0px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    background-color: var(--color-sidebar-bg);
+    border-radius: 50px;
+    padding: 0px 5px;
+    color: var(--color-success);
+    pointer-events: none;
+    animation: checkPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: none; /* Oculto por defecto */
+}
+
+/* Mostrar solo en inputs de texto (no selects, no files) */
+
+.input-icon-container:has(input[type="text"]) .validation-check-icon,
+.input-icon-container:has(input[type="email"]) .validation-check-icon,
+.input-icon-container:has(input[type="password"]) .validation-check-icon,
+.input-icon-container:has(input[type="number"]) .validation-check-icon,
+.input-icon-container:has(input[type="tel"]) .validation-check-icon,
+.input-icon-container:has(input[type="url"]) .validation-check-icon,
+.input-icon-container:has(select) .validation-check-icon,
+.input-icon-container:has(textarea) .validation-check-icon {
+    display: block;
+}
+
+@keyframes checkPop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* ========================================
+   🖼️ VALIDACIÓN DE IMAGEN
+   ======================================== */
+
+/* Zona de imagen con error */
+.image-preview-zone.image-error-state {
+    border-color: var(--color-danger) !important;
+    background-color: rgba(239, 68, 68, 0.03);
+}
+
+/* Ítems de galería (.preview-item) con error de validación */
+.image-upload-section .preview-item.image-error-state {
+    border-color: var(--color-danger) !important;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Zona de imagen válida */
+.image-preview-zone.image-success-state {
+    border-color: var(--color-success) !important;
+    background-color: rgba(34, 197, 94, 0.03);
+}
+
+/* Badge de validación para imagen */
+.image-validation-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 2;
+    animation: badgePop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.image-validation-badge.success {
+    background-color: var(--color-success);
+    color: white;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+
+.image-validation-badge.error {
+    background-color: var(--color-danger);
+    color: white;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+@keyframes badgePop {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* ========================================
+   🎨 LABEL CON ESTADO
+   ======================================== */
+
+/* Label cuando el campo tiene error */
+.input-group:has(.input-error) .label-form {
+    color: var(--color-danger) !important;
+}
+
+/* Label cuando el campo es válido */
+.input-group:has(.input-success) .label-form,
+.input-group:has(select.input-success) .label-form {
+    color: var(--color-success) !important;
+}
+
+/* Label y borde cuando la imagen única tiene error de validación */
+.image-upload-section:has(.file-input.input-error) .label-form {
+    color: var(--color-danger) !important;
+}
+
+.image-upload-section:has(.file-input.input-error) .image-preview-zone {
+    border-color: var(--color-danger) !important;
+}
+
+/* ========================================
+   🔄 TRANSICIONES SUAVES
+   ======================================== */
+
+.input-form,
+.textarea-form,
+.select-form,
+.image-preview-zone {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}

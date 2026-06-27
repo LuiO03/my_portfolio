@@ -19,11 +19,6 @@ github: https://github.com/LuiO03/POS-ModaMarket-Java
 demo: ""
 
 content: |
-  ## Descripción General
-
-  ModaMarket POS es un sistema de punto de venta desarrollado para apoyar la gestión operativa de una tienda de ropa, permitiendo registrar ventas de manera rápida, administrar el inventario y mantener organizada la información del negocio.
-
-  El sistema fue diseñado con una arquitectura MVC para separar la lógica de negocio, la interfaz gráfica y el acceso a los datos, facilitando futuras mejoras y el mantenimiento del proyecto.
 
   ## Características Principales
 
@@ -40,36 +35,6 @@ content: |
   - Interfaz gráfica intuitiva.
   - Organización modular del código.
 
-  ## Módulos Implementados
-
-  ### Gestión de Productos
-
-  Permite registrar, modificar, eliminar y consultar productos disponibles para la venta, manteniendo información como nombre, precio, categoría y cantidad en inventario.
-
-  ### Gestión de Categorías
-
-  Facilita la clasificación de los productos mediante categorías, mejorando la organización y la administración del catálogo.
-
-  ### Gestión de Clientes
-
-  Permite registrar y consultar información de los clientes para asociarla a las ventas realizadas.
-
-  ### Punto de Venta
-
-  Es el módulo principal del sistema, donde se seleccionan los productos, se calculan automáticamente los importes de la compra y se registra la venta.
-
-  Durante el proceso se realizan acciones como:
-
-  - Agregar productos al detalle de venta.
-  - Calcular subtotales y total.
-  - Validar disponibilidad de stock.
-  - Registrar la transacción.
-  - Actualizar el inventario automáticamente.
-
-  ### Gestión de Inventario
-
-  Permite controlar la disponibilidad de productos y mantener actualizado el stock después de cada operación de venta.
-
   ## Aspectos Técnicos Destacados
 
   - Desarrollo utilizando Java.
@@ -81,15 +46,6 @@ content: |
   - Validación de entradas de usuario.
   - Separación entre lógica de negocio, interfaz y acceso a datos.
   - Manejo de excepciones para mejorar la estabilidad del sistema.
-
-  ## Objetivos del Proyecto
-
-  - Automatizar el proceso de ventas de una tienda de ropa.
-  - Aplicar el patrón de arquitectura MVC.
-  - Implementar principios de Programación Orientada a Objetos.
-  - Desarrollar una solución organizada y escalable.
-  - Gestionar productos, clientes, ventas e inventario desde una única aplicación.
-  - Simular un sistema POS cercano a un entorno comercial real.
 
 technologies:
   - name: Java

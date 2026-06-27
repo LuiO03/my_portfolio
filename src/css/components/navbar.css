@@ -52,6 +52,10 @@
 	width: 100%;
 }
 
+.navbar-content li .nav-icon{
+	font-size: var(--font-size-h3);
+}
+
 .navbar-content li a {
 	font-size: var(--font-size-p);
 	padding: 0.6rem 1rem;

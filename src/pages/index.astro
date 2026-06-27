@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import ContactSection from "../components/ContactSection.astro";
 import ProjectList from "../components/ProjectList.astro";
 import { getCollection } from "astro:content";
-import "../styles/home.css";
+import "../css/home.css";
 
 const projects = await getCollection("projects");
 ---
@@ -62,23 +62,19 @@ const projects = await getCollection("projects");
 	</Fragment>
 	<Section id="about" title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
 		<p>
-			Soy un <strong>desarrollador apasionado por la tecnología y el desarrollo web</strong>. Con experiencia en diversas tecnologías, me encanta <strong
-				>crear soluciones innovadoras, eficientes y orientadas a las necesidades del usuario</strong
-			>. Mi objetivo es <strong>seguir creciendo profesionalmente</strong> y contribuir a proyectos que <strong>generen un impacto real</strong>.
+			Soy un <strong>desarrollador web</strong> apasionado por la tecnología y la creación de soluciones digitales. Con experiencia en diversas tecnologías, me gusta crear aplicaciones
+			eficientes y orientadas a las necesidades del usuario. Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que generen un impacto real.
 		</p>
 
 		<p>
-			Desde pequeño, siempre he estado fascinado por <strong>cómo funcionan las cosas detrás de escena</strong>, lo que me llevó a aprender <strong
-				>programación y desarrollo de software</strong
-			>. A lo largo de mi trayectoria, he trabajado en <strong>aplicaciones web, sistemas de gestión y soluciones empresariales</strong>, fortaleciendo mis conocimientos y
-			aprendiendo constantemente <strong>nuevas tecnologías y buenas prácticas</strong>.
+			Desde pequeño, siempre me ha interesado comprender cómo funcionan las cosas detrás de escena, lo que me llevó a aprender programación y desarrollo de software. A lo largo de
+			mi trayectoria, he trabajado en aplicaciones web, sistemas de gestión y soluciones empresariales, fortaleciendo mis conocimientos y adoptando buenas prácticas de desarrollo.
 		</p>
 
 		<p>
-			Mi enfoque se centra en la <strong>calidad del código</strong>, la <strong>arquitectura de software</strong>, la <strong>usabilidad</strong> y la <strong
-				>experiencia del usuario</strong
-			>. Me esfuerzo por desarrollar productos que sean <strong>mantenibles, escalables e intuitivos</strong>, combinando un diseño cuidado con un desarrollo sólido. Siempre estoy
-			dispuesto a <strong>afrontar nuevos desafíos</strong> y continuar evolucionando como desarrollador.
+			Mi enfoque se centra en la <strong>calidad del código</strong>, la arquitectura de software y la experiencia del usuario. Me esfuerzo por desarrollar productos mantenibles,
+			escalables e intuitivos, combinando un diseño cuidado con un desarrollo sólido. Siempre estoy dispuesto a afrontar nuevos desafíos y continuar evolucionando como
+			desarrollador.
 		</p>
 	</Section>
 
@@ -254,7 +250,7 @@ const projects = await getCollection("projects");
 						<span>Elementor</span>
 					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="tech-group">
 				<h3>Diseño y Edición</h3>
 				<div class="tech-items">

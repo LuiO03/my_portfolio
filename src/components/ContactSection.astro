@@ -1,8 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import "../styles/components/contact-section.css";
+import "../css/components/contact-section.css";
 import Section from "./Section.astro";
-import "../styles/components/section.css";
+import "../css/components/section.css";
+import "../css/ui/form.css";
+import "../css/ui/validation.css";
 ---
 
 <Section id="contact">
@@ -64,36 +66,67 @@ import "../styles/components/section.css";
 			</div>
 		</div>
 
-		<form class="contact-form">
-			<div class="form-group">
-				<label for="name">Nombre</label>
-				<input type="text" id="name" name="name" placeholder="Tu nombre" required />
+		<form class="form-contact" method="POST" enctype="multipart/form-data" id="contactForm">
+			<div class="form-body">
+				<div class="input-group">
+					<label for="name" class="label-form">
+						Nombre
+						<i class="ri-asterisk text-accent"></i>
+					</label>
+					<div class="input-icon-container">
+						<Icon name="tabler:user" class="input-icon" />
+						<input type="text" name="name" id="name" class="input-form" placeholder="Ingrese el nombre" required data-validate="required|min:3|max:100|alphanumeric" />
+					</div>
+				</div>
+
+				<div class="input-group">
+					<label for="email" class="label-form">
+						Correo electrónico
+						<i class="ri-asterisk text-accent"></i>
+					</label>
+					<div class="input-icon-container">
+						<Icon name="tabler:mail" class="input-icon" />
+						<input type="email" name="email" id="email" class="input-form" required placeholder="usuario@ejemplo.com" data-validate="required|email" />
+					</div>
+				</div>
+
+				<div class="input-group">
+					<label for="company" class="label-form"> Empresa (Opcional) </label>
+					<div class="input-icon-container">
+						<Icon name="tabler:building" class="input-icon" />
+						<input type="text" id="company" name="company" class="input-form" placeholder="Nombre de tu empresa" />
+					</div>
+				</div>
+
+				<div class="input-group">
+					<label for="subject" class="label-form">
+						Asunto
+						<i class="ri-asterisk text-accent"></i>
+					</label>
+					<div class="input-icon-container">
+						<Icon name="tabler:user" class="input-icon" />
+						<input type="text" name="subject" id="subject" class="input-form" placeholder="Ingrese el asunto" required data-validate="required|min:3|max:100|alphanumeric" />
+					</div>
+				</div>
+
+				<div class="input-group">
+					<label for="message" class="label-form">
+						Mensaje
+						<i class="ri-asterisk text-accent"></i>
+					</label>
+					<div class="input-icon-container">
+						<textarea id="message" name="message" rows="6" class="input-form" placeholder="Cuéntame más sobre tu proyecto..." required data-validate="required|min:3|max:100"></textarea>
+					</div>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="email">Correo electrónico</label>
-				<input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
-			</div>
-
-			<div class="form-group">
-				<label for="company">Empresa (Opcional)</label>
-				<input type="text" id="company" name="company" placeholder="Nombre de tu empresa" />
-			</div>
-
-			<div class="form-group">
-				<label for="subject">Asunto</label>
-				<input type="text" id="subject" name="subject" placeholder="¿En qué puedo ayudarte?" required />
-			</div>
-
-			<div class="form-group">
-				<label for="message">Mensaje</label>
-				<textarea id="message" name="message" rows="6" placeholder="Cuéntame más sobre tu proyecto..." required></textarea>
-			</div>
-
-			<button type="submit" class="button bg-accent">
+			<button type="submit" class="button bg-accent" id="submitBtn">
 				<Icon name="tabler:send" class="button-icon" />
 				Enviar mensaje
 			</button>
 		</form>
 	</div>
+	<script>
+		import "../js/contact-form.js";
+	</script>
 </Section>

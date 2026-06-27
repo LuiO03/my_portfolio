@@ -1,10 +1,13 @@
 ---
 title: Restaurante Encuentro
-short_description: Sitio web moderno para un restaurante con menú digital y gestión dinámica de productos.
-description: |
-  Encuentro es un sitio web desarrollado para un restaurante, enfocado en ofrecer una experiencia digital moderna a sus clientes mediante un menú interactivo y una presentación atractiva de sus productos.
 
-  El proyecto permite la visualización dinámica del menú, filtrado por categorías, búsqueda de productos y organización del contenido para facilitar la navegación del cliente. Además, cuenta con una interfaz adaptable para dispositivos móviles y una estructura preparada para una futura integración con nuevas funcionalidades.
+short_description: Sitio web para restaurante con menú digital interactivo, búsqueda dinámica y navegación optimizada.
+
+description: |
+  Encuentro es un sitio web desarrollado para un restaurante con el objetivo de ofrecer una experiencia digital moderna mediante un menú interactivo y una presentación atractiva de sus productos.
+
+  La aplicación permite explorar el menú de forma dinámica mediante filtros, búsquedas y ordenamientos sin recargar la página, mejorando la experiencia de navegación. Además, cuenta con un diseño responsive y una estructura preparada para incorporar futuras funcionalidades.
+
 logo: img02.jpg
 
 github: https://github.com/LuiO03/encuentro
@@ -14,18 +17,27 @@ demo: https://encuentro.infinityfreeapp.com/
 figma: https://www.figma.com/design/8DUpilgpBv0zKUopDNhagL/Proyecto-Encuentro?m=auto&t=PZp1RlzPoeJ2LkJU-6
 
 content: |
+
   ## Características Principales
 
-  - Menú digital dinámico para mostrar productos del restaurante.
+  - Menú digital dinámico para visualizar productos.
+  - Organización del menú mediante categorías.
+  - Búsqueda de productos sin recarga utilizando AJAX.
   - Filtrado de productos por categorías.
-  - Búsqueda de productos sin recarga mediante AJAX.
-  - Ordenamiento de productos por precio, fecha y destacados.
-  - Presentación visual de platos y productos.
-  - Diseño responsive adaptable a dispositivos móviles.
-  - Interfaz moderna enfocada en experiencia de usuario.
-  - Organización de productos mediante categorías.
-  - Carga dinámica de contenido para mejorar la navegación.
-  - Estructura preparada para futuras funcionalidades.
+  - Ordenamiento por precio, fecha y productos destacados.
+  - Actualización dinámica del contenido sin recargar la página.
+  - Diseño responsive para dispositivos móviles y escritorio.
+  - Interfaz enfocada en la experiencia del usuario.
+  - Estructura preparada para futuras ampliaciones.
+
+  ## Implementación Técnica
+
+  - Desarrollo utilizando PHP, MySQL y JavaScript.
+  - Comunicación asíncrona mediante AJAX.
+  - Consultas dinámicas para búsqueda, filtrado y ordenamiento.
+  - Separación de estilos CSS y scripts JavaScript.
+  - Organización modular del código para facilitar mantenimiento.
+  - Diseño responsive utilizando Bootstrap.
 
 technologies:
   - name: HTML5
@@ -42,10 +54,7 @@ technologies:
 
   - name: MySQL
     icon: simple-icons:mysql
-
-  - name: AJAX
-    icon: simple-icons:mysql
-
-  - name: Bootstrap
-    icon: simple-icons:bootstrap
+    
+  - name: Git
+    icon: simple-icons:git
 ---

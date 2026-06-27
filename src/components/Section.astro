@@ -7,15 +7,27 @@ interface Props {
 }
 
 const { id, title, description, is_background_alt } = Astro.props;
-import "../styles/components/section.css";
+
+import "../css/components/section.css";
 ---
 
-<section class="section" id={id} style={`background-color: ${is_background_alt ? 'rgba(var(--color-main-bg-alt-rgb), 0.8)' : 'rgba(var(--color-main-bg-rgb), 0.8)'};`}>
+<section
+	class="section"
+	id={id}
+	style={`background-color: ${
+		is_background_alt
+			? "rgba(var(--color-main-bg-alt-rgb), 0.8)"
+			: "rgba(var(--color-main-bg-rgb), 0.8)"
+	};`}
+>
 	<div class="section-container">
-		<div class="section-header">
-			<h2>{title}</h2>
-			<h6>{description}</h6>
-		</div>
+		{(title || description) && (
+			<div class="section-header">
+				{title && <h2>{title}</h2>}
+				{description && <h6>{description}</h6>}
+			</div>
+		)}
+
 		<div class="section-content">
 			<slot />
 		</div>

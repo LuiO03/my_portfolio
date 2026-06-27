@@ -1,4 +1,30 @@
+.project-back-button{
+	position: absolute;
+	width: 100%;
+	top: 15px;
+	left: 15px;
+}
 
+.project-back-button .button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem 0.5rem;
+	border-radius: 50px;
+	background: var(--color-inverse);
+	color: var(--color-normal);
+	font-family: var(--font-secondary);
+	font-weight: bold;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease,
+		filter 0.3s ease;
+}
+
+.project-back-button .button-icon{
+	font-size: var(--font-size-h1);
+	height: 100%;
+}
 
 .swiper{
     width: 100%;

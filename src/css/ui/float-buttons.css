@@ -24,7 +24,6 @@
 	transition:
 		opacity 0.25s ease,
 		transform 0.25s ease,
-		background-color 0.25s ease,
 		box-shadow 0.25s ease,
 		filter 0.25s ease;
 }
@@ -32,10 +31,10 @@
 .go-top-float-btn {
 	width: fit-content;
 	padding: 0.7rem 1rem;
-	background: var(--color-card-bg);
+	background: var(--color-inverse);
 	font-family: var(--font-secondary);
 	font-weight: bold;
-	color: var(--color-text);
+	color: var(--color-normal);
 	box-shadow: var(--box-shadow-card);
 	opacity: 0;
 }

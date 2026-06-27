@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import "../styles/components/navbar.css";
+import "../css/components/navbar.css";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -10,7 +10,7 @@ const currentPath = Astro.url.pathname;
 		<a class="logo" href="/">LuiOsorio</a>
 	</div>
 	<ul class="nav-links">
-		<img src="/images/foto.png" alt="Logo" />
+		<img src="/images/perfil.jpg" alt="Logo" />
 		<li>
 			<a href="/" class={currentPath === "/" ? "active" : "disabled"}>
 				<Icon class="nav-icon" name="tabler:home" />

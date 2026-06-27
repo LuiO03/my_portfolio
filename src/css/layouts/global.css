@@ -121,6 +121,10 @@
 	--radius-active: 8px;
 	--radius-button: 8px;
 	--radius-input: 6px;
+
+	--font-primary: "Poppins", sans-serif;
+	--font-secondary: "Lexend Deca", sans-serif;
+	--font-tertiary: "Atkinson", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -290,6 +294,6 @@ hr.nav-divider {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	margin-top: 2rem;
+	margin: 2rem 0px;
 	gap: 0.5rem;
 }

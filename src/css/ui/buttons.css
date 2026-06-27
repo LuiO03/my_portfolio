@@ -16,6 +16,7 @@
     font-size: var(--font-size-sm);
     color: white;
     width: fit-content;
+    border: none;
 }
 
 .button[disabled],

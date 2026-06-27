@@ -1,27 +1,43 @@
 ---
-title: POS ModaMarket
-short_description: Sistema web tipo POS enfocado para una tienda de ropa.
-description: |
-  ModaMarket es un sistema web orientado a la gestión y comercialización de prendas de vestir. El proyecto fue desarrollado utilizando PHP y una arquitectura MVC personalizada, permitiendo administrar productos, categorías, marcas e imágenes desde un panel administrativo intuitivo.
+title: POS Web ModaMarket
 
-  El objetivo principal del sistema es facilitar la organización del catálogo de productos y ofrecer una experiencia moderna tanto para administradores como para clientes.
+short_description: Sistema web tipo POS para la gestión de productos y catálogo de una tienda de ropa.
+
+description: |
+  ModaMarket es un sistema web tipo POS desarrollado para administrar el catálogo y la gestión de productos de una tienda de ropa. La aplicación fue construida utilizando PHP bajo una arquitectura MVC personalizada, ofreciendo un panel administrativo organizado para gestionar productos, categorías, marcas e imágenes.
+
+  El proyecto prioriza una estructura escalable, una administración eficiente del inventario y una experiencia de uso intuitiva, incorporando validaciones, medidas de seguridad y una interfaz adaptable a diferentes dispositivos.
+
 logo: img01.jpg
+
 github: https://github.com/LuiO03/ModaMarket
+
 demo: https://modamarket.infinityfreeapp.com/
 
 content: |
+
   ## Características Principales
 
-  - Gestión completa de productos.
+  - Gestión completa de productos mediante operaciones CRUD.
   - Administración de categorías y subcategorías.
-  - Gestión de marcas.
+  - Gestión independiente de marcas.
+  - Carga y administración de imágenes.
   - Generación automática de slugs para URLs amigables.
-  - Subida y administración de imágenes.
-  - Panel administrativo responsivo.
-  - Sistema de validaciones y mensajes flash.
+  - Panel administrativo responsive.
+  - Actualización dinámica de contenido mediante AJAX.
+  - Validación de formularios.
+  - Mensajes flash para retroalimentación de acciones.
   - Protección CSRF en formularios.
-  - Carga dinámica de contenido mediante AJAX.
-  - Diseño adaptable para dispositivos móviles.
+
+  ## Implementación Técnica
+
+  - Arquitectura MVC desarrollada en PHP.
+  - Programación Orientada a Objetos.
+  - Gestión de base de datos mediante MySQL.
+  - Organización modular del proyecto.
+  - Separación entre lógica de negocio, vistas y estilos.
+  - Uso de consultas preparadas para un acceso seguro a la base de datos.
+  - Código estructurado para facilitar mantenimiento y futuras ampliaciones.
 
 technologies:
   - name: HTML5

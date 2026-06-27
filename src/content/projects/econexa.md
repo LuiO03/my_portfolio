@@ -1,16 +1,12 @@
 ---
 title: Econexa
 
-short_description: Sistema web de gestión e inventario de productos desarrollado en PHP bajo arquitectura MVC.
+short_description: Sistema web de gestión de inventario desarrollado en PHP con arquitectura MVC y panel administrativo.
 
 description: |
-  Inventario de Productos es una aplicación web desarrollada para administrar de manera eficiente productos, categorías y marcas dentro de un entorno empresarial. El sistema fue construido utilizando PHP siguiendo el patrón de arquitectura MVC, permitiendo una estructura escalable, mantenible y organizada.
+  Econexa es un sistema web administrativo desarrollado para gestionar productos, categorías y marcas dentro de un entorno empresarial. La aplicación fue construida utilizando PHP bajo una arquitectura MVC personalizada, permitiendo una organización escalable, mantenible y orientada a buenas prácticas de desarrollo.
 
-  El proyecto incorpora funcionalidades avanzadas de administración como gestión de inventario, categorización jerárquica de productos, control de marcas, carga de imágenes, generación automática de slugs, validaciones de formularios, protección CSRF y exportación de información.
-
-  Además, se implementaron tecnologías modernas para mejorar la experiencia del usuario, incluyendo navegación tipo SPA mediante HTMX, carga dinámica de contenido sin recargas completas y una interfaz administrativa responsiva optimizada para diferentes dispositivos.
-
-  Este proyecto demuestra conocimientos sólidos en desarrollo backend con PHP, diseño de bases de datos relacionales, buenas prácticas de programación orientada a objetos y construcción de paneles administrativos profesionales.
+  El sistema incorpora herramientas para la administración de inventario, clasificación jerárquica de productos, gestión multimedia, validaciones, seguridad de formularios y generación de reportes, ofreciendo una solución completa para el control de información empresarial.
 
 logo: /images/projects/econexa/logo.png
 
@@ -19,63 +15,37 @@ github: https://github.com/LuiO03/inventario_de_productos
 demo: https://iconexa.infinityfreeapp.com/auth/login
 
 content: |
-  ## Descripción General
-
-  Inventario de Productos es una plataforma administrativa diseñada para centralizar y optimizar la gestión de productos dentro de un negocio. El sistema permite mantener organizada la información comercial mediante módulos independientes y escalables.
 
   ## Características Principales
 
-  - Arquitectura MVC desarrollada desde cero en PHP.
+  - Panel administrativo para gestión de información.
   - Gestión completa de productos mediante operaciones CRUD.
-  - Administración de categorías y subcategorías jerárquicas.
+  - Administración de categorías con estructura jerárquica de subcategorías.
   - Gestión independiente de marcas.
-  - Generación automática de slugs para URLs amigables.
   - Carga y administración de imágenes.
-  - Protección contra ataques CSRF.
-  - Validación de formularios tanto del lado servidor como cliente.
-  - Mensajes flash para retroalimentación de acciones.
+  - Generación automática de slugs para URLs amigables.
   - Sistema de búsqueda y filtrado de registros.
-  - Navegación SPA utilizando HTMX.
-  - Dashboard administrativo responsivo.
-  - Sidebar adaptable para escritorio y dispositivos móviles.
-  - Exportación de información a PDF.
-  - Manejo de estados activos e inactivos.
-  - Organización modular para facilitar futuras ampliaciones.
+  - Control de estados activos e inactivos.
+  - Exportación de información en formato PDF.
+  - Interfaz responsive para escritorio y dispositivos móviles.
 
-  ## Módulos Implementados
+  ## Arquitectura e Implementación
 
-  ### Gestión de Productos
-
-  Permite registrar, editar, visualizar y eliminar productos, almacenando información como nombre, descripción, precio, stock, categoría, marca e imágenes asociadas.
-
-  ### Gestión de Categorías
-
-  Soporta categorías padre e hijas, facilitando la organización jerárquica del catálogo de productos.
-
-  ### Gestión de Marcas
-
-  Administración completa de marcas con generación de slugs, imágenes y control de estado.
-
-  ### Panel Administrativo
-
-  Dashboard moderno con navegación intuitiva, optimizado para ofrecer acceso rápido a las diferentes funcionalidades del sistema.
-
-  ## Aspectos Técnicos Destacados
-
-  - Implementación de Programación Orientada a Objetos.
-  - Separación clara entre modelos, vistas y controladores.
-  - Uso de helpers reutilizables.
-  - Control centralizado de validaciones.
+  - Arquitectura MVC desarrollada desde cero en PHP.
+  - Programación Orientada a Objetos.
+  - Separación de responsabilidades entre modelos, vistas y controladores.
+  - Uso de helpers y componentes reutilizables.
+  - Organización modular del proyecto.
+  - Gestión estructurada de rutas y controladores.
   - Optimización de consultas y estructura de base de datos.
-  - Código organizado siguiendo buenas prácticas de desarrollo.
 
-  ## Objetivos del Proyecto
+  ## Seguridad y Buenas Prácticas
 
-  - Aplicar conocimientos avanzados de PHP y MVC.
-  - Implementar una arquitectura escalable para sistemas administrativos.
-  - Mejorar la experiencia de usuario mediante navegación dinámica.
-  - Mantener un código limpio, reutilizable y fácil de mantener.
-  - Simular un entorno real de gestión empresarial.
+  - Protección contra ataques CSRF.
+  - Validación de datos del lado servidor y cliente.
+  - Uso de consultas preparadas para acceso seguro a la base de datos.
+  - Manejo de mensajes flash para mejorar la experiencia del usuario.
+  - Código preparado para futuras ampliaciones.
 
 technologies:
   - name: PHP
@@ -84,11 +54,11 @@ technologies:
   - name: MySQL
     icon: simple-icons:mysql
 
-  - name: Bootstrap
-    icon: simple-icons:bootstrap
-
   - name: JavaScript
     icon: simple-icons:javascript
+
+  - name: Bootstrap
+    icon: simple-icons:bootstrap
 
   - name: HTML5
     icon: simple-icons:html5
@@ -96,9 +66,9 @@ technologies:
   - name: CSS3
     icon: simple-icons:css
 
-  - name: Git
-    icon: simple-icons:git
-
   - name: Composer
     icon: simple-icons:composer
+
+  - name: Git
+    icon: simple-icons:git
 ---

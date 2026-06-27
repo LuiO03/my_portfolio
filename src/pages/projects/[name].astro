@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 import { marked } from "marked";
 import "photoswipe/style.css";
 
-import "../../styles/name-proyecto.css";
+import "../../css/name-proyecto.css";
 
 export async function getStaticPaths() {
 	const projects = await getCollection("projects");
@@ -64,6 +64,11 @@ const content_html = marked(project.data.content ?? "");
 ---
 
 <MainLayout title={project.data.title}>
+	<div class="project-back-button">
+		<a href="/projects" class="button">
+			<Icon name="tabler:arrow-left" class="button-icon" />
+		</a>
+	</div>
 	<Fragment slot="header">
 		<Banner bannerImage="/images/banner-home2.jpg" transition:name={name}>
 			<div class="banner-content">
@@ -104,7 +109,6 @@ const content_html = marked(project.data.content ?? "");
 				<div class="project-content" set:html={description_html} />
 			</div>
 			<div class="project-section-content-img">
-				
 				<img src={projectImage.src} alt={project.data.title} transition:name={name} class="project-image" />
 			</div>
 		</div>
@@ -113,8 +117,51 @@ const content_html = marked(project.data.content ?? "");
 		<div class="project-section-content">
 			<div>
 				<div class="project-content" set:html={content_html} />
+			</div>
+			<div class="project-column-block">
 				<div class="project-column-block">
-					<h2>Tecnologías Utilizadas</h2>
+					<div class="project-section-info">
+						<h2>Galería</h2>
+						<p>Aquí puedes ver algunas capturas de pantalla del proyecto.</p>
+					</div>
+					{
+						galleryImages.length > 0 && (
+							<div class="swiper project-gallery-main">
+								<div class="swiper-wrapper">
+									{galleryImages.map((image) => (
+										<div class="swiper-slide">
+											<a href={image.src} data-pswp-width={image.width} data-pswp-height={image.height}>
+												<img src={image.src} alt={`Captura de ${project.data.title}`} />
+											</a>
+										</div>
+									))}
+								</div>
+
+								<div class="swiper-pagination" />
+								<div class="swiper-button-prev" />
+								<div class="swiper-button-next" />
+							</div>
+						)
+					}
+					{
+						galleryImages.length > 0 && (
+							<div class="swiper project-gallery-thumbs">
+								<div class="swiper-wrapper">
+									{galleryImages.map((image) => (
+										<div class="swiper-slide">
+											<img src={image.src} alt={`Miniatura de ${project.data.title}`} loading="lazy" />
+										</div>
+									))}
+								</div>
+							</div>
+						)
+					}
+				</div>
+				<div class="project-column-block">
+					<div class="project-section-info">
+						<h2>Tecnologías Utilizadas</h2>
+						<p>Estas son algunas de las tecnologías que utilicé para desarrollar este proyecto.</p>
+					</div>
 					<div class="technologies">
 						{
 							project.data.technologies?.map((tech) => (
@@ -126,44 +173,6 @@ const content_html = marked(project.data.content ?? "");
 						}
 					</div>
 				</div>
-			</div>
-			<div class="project-column-block">
-				<div class="project-section-info">
-					<h2>Galería</h2>
-					<p>Aquí puedes ver algunas capturas de pantalla del proyecto.</p>
-				</div>
-				{
-					galleryImages.length > 0 && (
-						<div class="swiper project-gallery-main">
-							<div class="swiper-wrapper">
-								{galleryImages.map((image) => (
-									<div class="swiper-slide">
-										<a href={image.src} data-pswp-width={image.width} data-pswp-height={image.height}>
-											<img src={image.src} alt={`Captura de ${project.data.title}`} />
-										</a>
-									</div>
-								))}
-							</div>
-
-							<div class="swiper-pagination" />
-							<div class="swiper-button-prev" />
-							<div class="swiper-button-next" />
-						</div>
-					)
-				}
-				{
-					galleryImages.length > 0 && (
-						<div class="swiper project-gallery-thumbs">
-							<div class="swiper-wrapper">
-								{galleryImages.map((image) => (
-									<div class="swiper-slide">
-										<img src={image.src} alt={`Miniatura de ${project.data.title}`} loading="lazy" />
-									</div>
-								))}
-							</div>
-						</div>
-					)
-				}
 			</div>
 		</div>
 	</Section>
@@ -177,7 +186,7 @@ const content_html = marked(project.data.content ?? "");
 
 	<script>
 		import Swiper from "swiper";
-		import { Navigation, Pagination, Autoplay, Thumbs, FreeMode } from "swiper/modules";
+		import { Navigation, /*Pagination,*/ Autoplay, Thumbs, FreeMode } from "swiper/modules";
 
 		interface SwiperHTMLElement extends HTMLElement {
 			swiper?: Swiper;
@@ -207,7 +216,7 @@ const content_html = marked(project.data.content ?? "");
 			});
 
 			new Swiper(mainEl, {
-				modules: [Navigation, Pagination, Autoplay, Thumbs],
+				modules: [Navigation, /*Pagination,*/ Autoplay, Thumbs],
 				loop: true,
 				autoplay: {
 					delay: 5000,
@@ -218,11 +227,11 @@ const content_html = marked(project.data.content ?? "");
 				navigation: {
 					nextEl: ".project-gallery-main .swiper-button-next",
 					prevEl: ".project-gallery-main .swiper-button-prev",
-				},
+				} /*
 				pagination: {
 					el: ".project-gallery-main .swiper-pagination",
 					clickable: true,
-				},
+				},*/,
 			});
 		}
 

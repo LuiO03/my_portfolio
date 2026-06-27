@@ -7,7 +7,7 @@ interface Props {
 
 const { whatsappUrl } = Astro.props;
 
-import "../styles/ui/float-buttons.css";
+import "../css/ui/float-buttons.css";
 ---
 
 <div class="float-buttons-container">
@@ -22,7 +22,7 @@ import "../styles/ui/float-buttons.css";
 </div>
 
 <script>
-	(() => {
+	function initGoTop() {
 		const btn = document.getElementById("goTopFloatBtn");
 		const main = document.querySelector("main");
 
@@ -57,16 +57,20 @@ import "../styles/ui/float-buttons.css";
 					ticking = true;
 				}
 			},
-			{ passive: true },
+			{ passive: true }
 		);
 
-		btn.addEventListener("click", () => {
+		btn.onclick = () => {
 			main.scrollTo({
 				top: 0,
 				behavior: "smooth",
 			});
-		});
+		};
 
 		updateButton();
-	})();
+	}
+
+	initGoTop();
+
+	document.addEventListener("astro:page-load", initGoTop);
 </script>
