@@ -6,6 +6,8 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
+	width: 100%;
+	padding: 0px 1rem;
 }
 
 .hero-video {
@@ -479,8 +481,7 @@
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	margin-bottom: 1.25rem;
-	font-size: 1.1rem;
+	padding: 0rem 1.25rem;
 }
 
 .knowledge-group img {
@@ -505,24 +506,13 @@
 	transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-	.knowledge-container {
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-		gap: 1rem;
-	}
-
-	.knowledge-group{
-		padding: 1rem 0px;
-	}
-
-	.knowledge-item{
-		padding: 0.75rem 1rem;
-	}
-}
-
-.knowledge-item:hover{
+.knowledge-item:hover {
 	background: var(--color-hover);
 	transform: translateX(5px);
+}
+
+.knowledge-item span {
+	font-weight: bold;
 }
 
 .knowledge-item svg {
@@ -539,4 +529,24 @@
 /* Hover */
 .knowledge-item:hover {
 	transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+	.knowledge-container {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1rem;
+	}
+
+	.knowledge-group {
+		padding: 1rem 0px;
+	}
+
+	.knowledge-item,
+	.knowledge-group h3 {
+		padding: 0.75rem 1rem;
+	}
+
+	.knowledge-item svg {
+		display: none;
+	}
 }
