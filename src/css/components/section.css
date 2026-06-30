@@ -230,9 +230,6 @@
 =========================== */
 
 @media (max-width: 600px) {
-	.section {
-		padding: 2rem 1rem;
-	}
 	.project-info {
 		gap: 1rem;
 	}
