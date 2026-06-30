@@ -1,294 +1,76 @@
-.navbar-content {
-	background-color: var(--color-sidebar-bg);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-	position: sticky;
+.navbar {
+	width: calc(100% - 305px);
+	position: fixed;
+	/*position: sticky;*/
 	top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100dvh;
-	padding: 1rem;
-	gap: 1rem;
-}
-
-.nav-header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.nav-links img {
-	min-width: 130px;
-	width: 130px;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 3px solid var(--color-accent);
-	padding: 0.25rem;
-}
-
-.navbar-content .logo {
-	width: 100%;
-	font-size: var(--font-size-h1);
-	font-weight: 700;
-	color: var(--color-text);
-	text-align: center;
-	text-decoration: none;
-}
-
-.navbar-content .nav-links {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	list-style: none;
-	gap: 0.5rem;
-	width: 100%;
-}
-
-.navbar-content li {
-	display: inline-block;
-	width: 100%;
-}
-
-.navbar-content li .nav-icon{
-	font-size: var(--font-size-h3);
-}
-
-.navbar-content li a {
-	font-size: var(--font-size-p);
-	padding: 0.6rem 1rem;
-	border-radius: var(--radius-active);
-	text-decoration: none;
-	color: var(--color-text);
-	display: flex;
-	align-items: center;
-	gap: 0.25rem;
-}
-
-.navbar-content li .active {
-	background-color: var(--color-accent);
-	color: white;
-	font-weight: bold;
-	pointer-events: none;
-	cursor: default;
-}
-
-.navbar-content li .disabled:hover {
-	background-color: var(--color-hover);
-}
-
-.navbar-content .button {
-	justify-content: flex-start;
-	width: 100%;
-}
-
-.nav-actions {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	justify-content: center;
-	width: 100%;
-}
-
-.nav-theme-toggle:hover {
-	background-color: var(--color-hover);
-}
-
-.nav-overlay {
-	display: none;
-}
-
-.nav-theme-toggle {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	cursor: pointer;
-	color: var(--color-text);
-	width: 100%;
-	padding: 0.6rem 1rem;
-	cursor: pointer;
-	border-radius: var(--radius-active);
-}
-
-.nav-icon-theme {
-	font-size: var(--font-size-h2);
-	color: var(--color-text);
-}
-
-.nav-theme-toggle label {
-	cursor: pointer;
-	font-size: var(--font-size-p);
-}
-
-/* === botón hamburguesa === */
-
-.nav-actions > :last-child {
-	display: none;
-}
-.nav-icon-hamburger {
-	position: relative;
-
-	flex-direction: column;
-	justify-content: center;
-	gap: 7px;
-	width: 30px;
-	height: 30px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 70;
-	transition: transform 0.3s ease;
-}
-
-.hamburger-line {
-	display: block;
-	height: 3px;
-	background-color: var(--color-text);
-	border-radius: 12px;
+	z-index: 100;
 	transition:
-		transform 0.3s ease,
-		width 0.3s ease;
+		backdrop-filter 0.3s ease,
+		-webkit-backdrop-filter 0.3s ease,
+		box-shadow 0.3s ease;
+	background-color: rgba(0, 0, 0, 0.3);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+/*
+.navbar.scrolled {
+	background-color: rgba(0, 0, 0, 0.3);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+*/
+.navbar .back-button{
+	font-weight: bold;
+	color: white;
 }
 
-/* Línea 1: mitad izquierda, gira desde la derecha */
-.hamburger-line:nth-child(1) {
-	width: 50%;
-	transform-origin: right;
-	align-self: flex-start;
+.navbar .back-button:hover{
+	color: white;
 }
-
-/* Línea 2: línea completa */
-.hamburger-line:nth-child(2) {
-	width: 100%;
+/*
+.navbar.scrolled  .navbar-theme-toggle,.navbar.scrolled .back-button{
+	color: white;
 }
-
-/* Línea 3: mitad derecha, gira desde la izquierda */
-.hamburger-line:nth-child(3) {
-	width: 50%;
-	align-self: flex-end;
-	transform-origin: left;
-}
-
-/* === Estado activo (menú abierto) === */
-.nav-icon-hamburger.active .hamburger-line:nth-child(1) {
-	transform: rotate(225deg) translate(-7px, -7px);
-	width: 50%;
-}
-
-.nav-icon-hamburger.active .hamburger-line:nth-child(2) {
-	transform: rotate(-45deg);
-	width: 100%;
-}
-
-.nav-icon-hamburger.active .hamburger-line:nth-child(3) {
-	transform: rotate(225deg) translate(7px, 7px);
-	width: 50%;
-}
-
-/* ==  ==*/
-
-
-
-
-
-@media (max-width: 768px) {
-	.nav-divider {
+*/
+@media (max-width: 768px){
+	.navbar{
 		display: none;
 	}
-	.nav-header img {
-		display: none;
-	}
-
-	.nav-actions {
-		flex-direction: row;
-		gap: 0.2rem;
-	}
-
-	.navbar-content {
-		flex-direction: row;
-		height: 60px;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.navbar-content .nav-links {
-		display: flex;
-		z-index: 200;
-		flex-direction: column;
-		background-color: var(--color-sidebar-bg);
-		position: fixed;
-		top: 60px;
-		height: calc(100dvh - 60px);
-		left: 0;
-		width: 50%;
-		padding: 1rem;
-		z-index: 300;
-		transform: translateX(-110%);
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-
-		transition:
-			transform 0.28s ease,
-			opacity 0.28s ease,
-			visibility 0.28s ease;
-	}
-
-	.navbar-content .nav-links.menu-open {
-		transform: translateX(0);
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
-	}
-
-	.nav-actions{
-		gap: 2rem;
-	}
-
-	.nav-theme-toggle{
-		padding: 0px;
-	}
-
-	.nav-theme-toggle label {
-		display: none;
-	}
-
-	.nav-overlay {
-		display: block;
-		position: fixed;
-		top: 60px;
-		left: 0;
-		width: 100vw;
-		height: calc(100vh - 60px);
-		background-color: rgba(0, 0, 0, 0.45);
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		z-index: 200;
-		transition:
-			opacity 0.28s ease,
-			visibility 0.28s ease;
-	}
-
-	.nav-overlay.visible {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
-	}
-
-	.nav-actions{
-		width: fit-content;
-	}
-
-	.nav-actions > :last-child {
-		display: block;
-	}
-
-	.nav-icon-hamburger {
-		display: flex;
-		z-index: 1200;
-	}
 }
+
+.navbar-content {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 50px;
+}
+
+.navbar-content:has(> :nth-child(2)) {
+	justify-content: space-between;
+}
+
+.navbar-theme-toggle {
+	flex: end;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+	width: fit-content;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+}
+
+.navbar-icon-theme {
+	color: white;
+	font-size: var(--font-size-h2);
+}
+
+.navbar-theme-toggle label {
+	color: white;
+	cursor: pointer;
+	font-size: var(--font-size-p);
+	font-weight: bold;
+}
+

@@ -2,9 +2,9 @@
 	height: 35dvh;
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	text-align: center;
 	position: relative;
-	background-attachment: fixed;
     border-radius: 0px 0px var(--radius-card) var(--radius-card);
 }
 

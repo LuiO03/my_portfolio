@@ -1,0 +1,178 @@
+---
+import { Icon } from "astro-icon/components";
+import "../css/components/sidebar.css";
+
+interface Props {
+	backUrl?: string;
+}
+
+const { backUrl } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<aside class="sidebar-content">
+	<!-- div para implementar ancho maximo -->
+	<div class="sidebar-items">
+		<div class="sidebar-header">
+			{
+				backUrl && (
+					<a href={backUrl} class="back-button">
+						<Icon name="tabler:arrow-left" class="button-icon" />
+					</a>
+				)
+			}
+			<a class="logo" href="/">LuiOsorio</a>
+		</div>
+		<ul class="sidebar-links">
+			<div class="sidebar-links-container">
+				<img src="/images/perfil.jpg" alt="Logo" />
+				<li>
+					<a href="/" class={currentPath === "/" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:home" />
+						Inicio
+					</a>
+				</li>
+				<li>
+					<a href="/#about" class={currentPath === "/about" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:user" />
+						Sobre mí
+					</a>
+				</li>
+				<li>
+					<a href="/#specialties" class={currentPath === "/specialties" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:code" />
+						Especialidades
+					</a>
+				</li>
+				<li>
+					<a href="/#projects" class={currentPath === "/projects" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:briefcase" />
+						Proyectos
+					</a>
+				</li>
+				<li>
+					<a href="/#technologies" class={currentPath === "/technologies" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:devices" />
+						Tecnologías
+					</a>
+				</li>
+				<li>
+					<a href="/#knowledge" class={currentPath === "/knowledge" ? "active" : "disabled"}>
+						<Icon class="sidebar-icon" name="tabler:book" />
+						Conocimientos
+					</a>
+				</li>
+			</div>
+			<a href="/#contact" class="button bg-success">
+				<Icon name="tabler:send" class="button-icon" />
+				Contáctame
+			</a>
+		</ul>
+	</div>
+	<div class="sidebar-overlay" aria-hidden="true"></div>
+	<!--<hr class="sidebar-divider" />-->
+	<article class="sidebar-actions">
+		<div class="sidebar-theme-toggle" aria-label="Cambiar tema" id="theme-toggle">
+			<Icon class="sidebar-icon-theme" name="tabler:moon-filled" />
+		</div>
+		<div class="sidebar-theme-toggle">
+			<button id="userSidebarToggle" class="sidebar-icon-hamburger" aria-label="Abrir menú de usuario">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+		</div>
+	</article>
+</aside>
+
+<script>
+	function initThemeToggle() {
+		const btn = document.getElementById("theme-toggle");
+
+		if (!btn) return;
+
+		btn.onclick = () => {
+			const dark = document.documentElement.classList.toggle("dark");
+
+			localStorage.setItem("theme", dark ? "dark" : "light");
+		};
+	}
+
+	function initMobileNavbarToggle() {
+		const toggleBtn = document.getElementById("userSidebarToggle");
+		const navLinks = document.querySelector(".sidebar-links");
+		const navOverlay = document.querySelector(".sidebar-overlay");
+
+		if (!(toggleBtn instanceof HTMLButtonElement) || !(navLinks instanceof HTMLElement) || !(navOverlay instanceof HTMLElement)) return;
+
+		const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+		const setExpanded = (isExpanded: boolean) => {
+			toggleBtn.setAttribute("aria-expanded", String(isExpanded));
+		};
+
+		const closeMenu = () => {
+			toggleBtn.classList.remove("active");
+			navLinks.classList.remove("menu-open");
+			navOverlay.classList.remove("visible");
+			setExpanded(false);
+		};
+
+		const openMenu = () => {
+			toggleBtn.classList.add("active");
+			navLinks.classList.add("menu-open");
+			navOverlay.classList.add("visible");
+			setExpanded(true);
+		};
+
+		const syncByViewport = () => {
+			if (!isMobile()) {
+				navLinks.classList.remove("menu-open");
+				navOverlay.classList.remove("visible");
+				toggleBtn.classList.remove("active");
+				setExpanded(false);
+				return;
+			}
+
+			if (!navLinks.classList.contains("menu-open")) {
+				closeMenu();
+			}
+		};
+
+		if (toggleBtn.dataset.menuReady === "true") {
+			syncByViewport();
+			return;
+		}
+
+		toggleBtn.dataset.menuReady = "true";
+		setExpanded(false);
+
+		toggleBtn.onclick = () => {
+			if (!isMobile()) return;
+
+			if (navLinks.classList.contains("menu-open")) {
+				closeMenu();
+			} else {
+				openMenu();
+			}
+		};
+
+		navLinks.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				if (isMobile()) closeMenu();
+			});
+		});
+
+		navOverlay.addEventListener("click", () => {
+			if (isMobile()) closeMenu();
+		});
+
+		window.addEventListener("resize", syncByViewport);
+		syncByViewport();
+	}
+
+	initThemeToggle();
+	initMobileNavbarToggle();
+	document.addEventListener("astro:page-load", initThemeToggle);
+	document.addEventListener("astro:page-load", initMobileNavbarToggle);
+</script>

@@ -4,11 +4,13 @@ import { getCollection } from "astro:content";
 import Banner from "../../components/Banner.astro";
 import Section from "../../components/Section.astro";
 import ContactSection from "../../components/ContactSection.astro";
+
 import { Icon } from "astro-icon/components";
 import { marked } from "marked";
 import "photoswipe/style.css";
 
 import "../../css/name-proyecto.css";
+
 
 export async function getStaticPaths() {
 	const projects = await getCollection("projects");
@@ -63,14 +65,11 @@ const description_html = marked(project.data.description ?? "");
 const content_html = marked(project.data.content ?? "");
 ---
 
-<MainLayout title={project.data.title}>
-	<div class="project-back-button">
-		<a href="/projects" class="button">
-			<Icon name="tabler:arrow-left" class="button-icon" />
-		</a>
-	</div>
+<MainLayout title={project.data.title} backUrl="/projects">
+	
 	<Fragment slot="header">
 		<Banner bannerImage="/images/banner-home2.jpg" transition:name={name}>
+			
 			<div class="banner-content">
 				<!-- {projectLogo && <img src={projectLogo.src} alt={`Logo de ${project.data.title}`} class="project-logo" />} -->
 				<h1 transition:name={`${project.id}-title`}>

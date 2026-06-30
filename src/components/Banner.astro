@@ -1,4 +1,5 @@
 ---
+
 interface Props {
 	bannerImage?: string;
 }
@@ -8,6 +9,7 @@ import "../css/components/banner.css";
 ---
 
 <div class="header-banner" style={`background-image: url(${bannerImage});`}>
+	
 	<div class="header-overlay">
 		<slot />
 	</div>

@@ -156,7 +156,6 @@ body {
 	font-family: "Poppins", sans-serif;
 	position: relative;
 	background: var(--color-main-bg);
-	/* background-color: green; */
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	display: grid;
@@ -176,6 +175,7 @@ main {
 	height: 100dvh;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
+	position: relative;
 }
 
 body,
@@ -286,14 +286,4 @@ hr.nav-divider {
 	height: 1px;
 	border-color: var(--color-border);
 	width: 100%;
-}
-@media (max-width: 720px) {
-}
-
-.project-navigation {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	margin: 2rem 0px;
-	gap: 0.5rem;
 }

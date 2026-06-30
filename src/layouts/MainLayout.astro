@@ -1,21 +1,22 @@
 ---
 import { ClientRouter } from "astro:transitions";
 
-import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
 import Footer from "../components/Footer.astro";
-
+import Navbar from "../components/Navbar.astro";
 //const {title} = Astro.props;
 interface Props {
 	title: string;
-	//isActive?: boolean;
-	bannerImage?: string;
+	backUrl?: string;
+	style?: string;
 }
-const { title, bannerImage } = Astro.props;
+const { title, backUrl, style } = Astro.props;
 
 import "../css/layouts/global.css";
 import "../css/ui/fondo-main.css";
 import "../css/ui/buttons.css";
 import "../css/ui/backgrounds.css";
+import "../css/layouts/tinycomponents.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -73,8 +74,9 @@ import FloatButtons from "../components/FloatButtons.astro";
 		<div class="background" aria-hidden="true">
 			{Array.from({ length: 6 }).map(() => <div class="ball" />)}
 		</div>
-		<Navbar />
+		<Sidebar backUrl={backUrl} />
 		<main>
+			<Navbar backUrl={backUrl} />
 			<header>
 				<slot name="header" />
 			</header>
