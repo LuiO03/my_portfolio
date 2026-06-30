@@ -4,9 +4,10 @@ interface Props {
 	title?: string;
 	description?: string;
 	is_background_alt?: boolean;
+	style?: string;
 }
 
-const { id, title, description, is_background_alt } = Astro.props;
+const { id, title, description, is_background_alt, style } = Astro.props;
 
 import "../css/components/section.css";
 ---
@@ -14,19 +15,24 @@ import "../css/components/section.css";
 <section
 	class="section"
 	id={id}
-	style={`background-color: ${
-		is_background_alt
-			? "rgba(var(--color-main-bg-alt-rgb), 0.8)"
-			: "rgba(var(--color-main-bg-rgb), 0.8)"
-	};`}
+	class:list={[
+		"section-bg",
+		{
+			"section-bg-alt": is_background_alt,
+		},
+	]}
+	id={id}
+	style={style}
 >
 	<div class="section-container">
-		{(title || description) && (
-			<div class="section-header">
-				{title && <h2>{title}</h2>}
-				{description && <h6>{description}</h6>}
-			</div>
-		)}
+		{
+			(title || description) && (
+				<div class="section-header">
+					{title && <h2>{title}</h2>}
+					{description && <h6>{description}</h6>}
+				</div>
+			)
+		}
 
 		<div class="section-content">
 			<slot />

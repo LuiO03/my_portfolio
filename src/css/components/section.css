@@ -3,6 +3,14 @@
     padding: 2rem 1rem; 
 }
 
+.section-bg {
+	background-color: rgba(var(--color-main-bg-rgb), 0.8);
+}
+
+.section-bg-alt {
+	background-color: rgba(var(--color-main-bg-alt-rgb), 0.8);
+}
+
 .section-container {
     width: 100%;
     max-width: var(--max-width);

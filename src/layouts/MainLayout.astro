@@ -8,9 +8,8 @@ import Navbar from "../components/Navbar.astro";
 interface Props {
 	title: string;
 	backUrl?: string;
-	style?: string;
 }
-const { title, backUrl, style } = Astro.props;
+const { title, backUrl } = Astro.props;
 
 import "../css/layouts/global.css";
 import "../css/ui/fondo-main.css";
