@@ -4,10 +4,9 @@ interface Props {
 	title?: string;
 	description?: string;
 	is_background_alt?: boolean;
-	style?: string;
 }
 
-const { id, title, description, is_background_alt, style } = Astro.props;
+const { id, title, description, is_background_alt } = Astro.props;
 
 import "../css/components/section.css";
 ---
@@ -22,7 +21,6 @@ import "../css/components/section.css";
 		},
 	]}
 	id={id}
-	style={style}
 >
 	<div class="section-container">
 		{

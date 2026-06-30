@@ -484,7 +484,7 @@
 	padding: 0rem 1.25rem;
 }
 
-.knowledge-group img {
+.knowledge-content img {
 	width: clamp(70%, 20vw, 80%);
 	object-fit: contain;
 }

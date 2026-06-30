@@ -75,6 +75,11 @@
 		border-radius: 50%;
 	}
 
+	.go-top-float-btn .btn-icon{
+		width: 50%;
+		height: 50%;
+	}
+
 	.go-top-float-btn .btn-label {
 		display: none;
 	}

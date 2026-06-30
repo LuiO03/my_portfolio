@@ -1,14 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
 interface Props {
+	isSticky: boolean;
 	backUrl?: string;
 }
 
-const { backUrl } = Astro.props;
+const { backUrl, isSticky } = Astro.props;
 import "../css/components/navbar.css";
 ---
 
-<nav class="navbar" id="navbar">
+<nav class:list={["navbar", { sticky: isSticky }]} id="navbar">
 	<div class="navbar-content">
 		{
 			backUrl && (

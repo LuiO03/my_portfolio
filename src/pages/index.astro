@@ -10,7 +10,7 @@ import "../css/home.css";
 const projects = await getCollection("projects");
 ---
 
-<MainLayout title="Inicio">
+<MainLayout title="Inicio" isSticky={false}>
 	<Fragment slot="header">
 		<section class="hero">
 			<video class="hero-video" autoplay muted loop playsinline>
@@ -325,161 +325,173 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Diseño y Experiencia de Usuario</h3>
 
-				<img src="/images/knowledge/Low code development-amico.png" alt="Diseño y Experiencia de Usuario" loading="lazy" decoding="async" />
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Low code development-amico.png" alt="Diseño y Experiencia de Usuario" loading="lazy" decoding="async" />
 
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:users" class="knowledge-icon" />
-						<span>Análisis de usuarios</span>
-					</li>
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:users" class="knowledge-icon" />
+							<span>Análisis de usuarios</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:layout" class="knowledge-icon" />
-						<span>Diseño de interfaces UI</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:layout" class="knowledge-icon" />
+							<span>Diseño de interfaces UI</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:device-mobile" class="knowledge-icon" />
-						<span>Diseño responsive</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:device-mobile" class="knowledge-icon" />
+							<span>Diseño responsive</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:palette" class="knowledge-icon" />
-						<span>Sistemas de diseño</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:palette" class="knowledge-icon" />
+							<span>Sistemas de diseño</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="knowledge-group">
 				<h3>Arquitectura y Patrones</h3>
-				<img src="/images/knowledge/Source code-bro.png" alt="Arquitectura y Patrones" loading="lazy" decoding="async" />
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:layout-dashboard" class="knowledge-icon" />
-						<span>Arquitectura MVC</span>
-					</li>
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Source code-bro.png" alt="Arquitectura y Patrones" loading="lazy" decoding="async" />
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:layout-dashboard" class="knowledge-icon" />
+							<span>Arquitectura MVC</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:components" class="knowledge-icon" />
-						<span>Componentización</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:components" class="knowledge-icon" />
+							<span>Componentización</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:layers-subtract" class="knowledge-icon" />
-						<span>Separación de responsabilidades</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:layers-subtract" class="knowledge-icon" />
+							<span>Separación de responsabilidades</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="knowledge-group">
 				<h3>Backend y APIs</h3>
-				<img src="/images/knowledge/Software integration-bro.png" alt="Backend y APIs" loading="lazy" decoding="async" />
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:api" class="knowledge-icon" />
-						<span>REST API</span>
-					</li>
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Software integration-bro.png" alt="Backend y APIs" loading="lazy" decoding="async" />
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:api" class="knowledge-icon" />
+							<span>REST API</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:database" class="knowledge-icon" />
-						<span>CRUD</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:database" class="knowledge-icon" />
+							<span>CRUD</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:code-circle" class="knowledge-icon" />
-						<span>Programación Orientada a Objetos</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:code-circle" class="knowledge-icon" />
+							<span>Programación Orientada a Objetos</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:route" class="knowledge-icon" />
-						<span>Arquitectura por capas</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:route" class="knowledge-icon" />
+							<span>Arquitectura por capas</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:alert-circle" class="knowledge-icon" />
-						<span>Manejo de errores</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:alert-circle" class="knowledge-icon" />
+							<span>Manejo de errores</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="knowledge-group">
 				<h3>Seguridad Web</h3>
-				<img src="/images/knowledge/Security On-bro.png" alt="Seguridad Web" loading="lazy" decoding="async" />
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:shield-lock" class="knowledge-icon" />
-						<span>Protección CSRF</span>
-					</li>
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Security On-bro.png" alt="Seguridad Web" loading="lazy" decoding="async" />
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:shield-lock" class="knowledge-icon" />
+							<span>Protección CSRF</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:lock-password" class="knowledge-icon" />
-						<span>Validación y sanitización</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:lock-password" class="knowledge-icon" />
+							<span>Validación y sanitización</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:key" class="knowledge-icon" />
-						<span>Autenticación y autorización</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:key" class="knowledge-icon" />
+							<span>Autenticación y autorización</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:password" class="knowledge-icon" />
-						<span>Hashing de contraseñas</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:password" class="knowledge-icon" />
+							<span>Hashing de contraseñas</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:code-off" class="knowledge-icon" />
-						<span>Prevención XSS</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:code-off" class="knowledge-icon" />
+							<span>Prevención XSS</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="knowledge-group">
 				<h3>Base de Datos</h3>
-				<img src="/images/knowledge/Server-amico.png" alt="Base de Datos" loading="lazy" decoding="async" />
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:relation-many-to-many" />
-						<span>Modelado relacional</span>
-					</li>
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Server-amico.png" alt="Base de Datos" loading="lazy" decoding="async" />
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:relation-many-to-many" />
+							<span>Modelado relacional</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:database-search" />
-						<span>Consultas SQL</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:database-search" />
+							<span>Consultas SQL</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:arrows-sort" />
-						<span>Optimización básica</span>
-					</li>
-					<li class="knowledge-item">
-						<Icon name="tabler:git-merge" />
-						<span>Relaciones y normalización</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:arrows-sort" />
+							<span>Optimización básica</span>
+						</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:git-merge" />
+							<span>Relaciones y normalización</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:table-options" />
-						<span>Migraciones de BD</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:table-options" />
+							<span>Migraciones de BD</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="knowledge-group">
 				<h3>Control de Versiones</h3>
-				<img src="/images/knowledge/Version control-amico.png" alt="Control de Versiones" loading="lazy" decoding="async" />
-				<ul class="knowledge-items">
-					<li class="knowledge-item">
-						<Icon name="tabler:brand-github" />
-						<span>Git y GitHub</span>
-					</li>
+				<div class="knowledge-content">
+					<img src="/images/knowledge/Version control-amico.png" alt="Control de Versiones" loading="lazy" decoding="async" />
+					<ul class="knowledge-items">
+						<li class="knowledge-item">
+							<Icon name="tabler:brand-github" />
+							<span>Git y GitHub</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:git-branch" />
-						<span>Flujo de ramas</span>
-					</li>
+						<li class="knowledge-item">
+							<Icon name="tabler:git-branch" />
+							<span>Flujo de ramas</span>
+						</li>
 
-					<li class="knowledge-item">
-						<Icon name="tabler:history" />
-						<span>Control de cambios</span>
-					</li>
-				</ul>
+						<li class="knowledge-item">
+							<Icon name="tabler:history" />
+							<span>Control de cambios</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</Section>

@@ -8,8 +8,9 @@ import Navbar from "../components/Navbar.astro";
 interface Props {
 	title: string;
 	backUrl?: string;
+	isSticky: boolean;
 }
-const { title, backUrl } = Astro.props;
+const { title, backUrl, isSticky } = Astro.props;
 
 import "../css/layouts/global.css";
 import "../css/ui/fondo-main.css";
@@ -75,7 +76,7 @@ import FloatButtons from "../components/FloatButtons.astro";
 		</div>
 		<Sidebar backUrl={backUrl} />
 		<main>
-			<Navbar backUrl={backUrl} />
+			<Navbar backUrl={backUrl} isSticky={isSticky} />
 			<header>
 				<slot name="header" />
 			</header>

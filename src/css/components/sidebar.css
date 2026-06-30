@@ -119,8 +119,7 @@
 	background-color: var(--color-hover);
 }
 
-.sidebar-content .button {
-	justify-content: flex-start;
+.sidebar-links .button {
 	width: 100%;
 }
 

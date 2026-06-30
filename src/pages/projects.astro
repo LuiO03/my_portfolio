@@ -8,8 +8,8 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<MainLayout title="Proyectos" backUrl="/">
-	<Section style="padding-top: 4rem; "
+<MainLayout title="Proyectos" backUrl="/" isSticky={true}>
+	<Section
 		title={`Observa todos mis proyectos (${projects.length})`}
 		description="Aquí encontrarás una selección de mis trabajos más destacados. Desde aplicaciones web hasta proyectos de código abierto, cada uno refleja mi pasión por la tecnología y el desarrollo."
 	>

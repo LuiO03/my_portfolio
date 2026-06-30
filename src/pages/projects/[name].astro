@@ -65,7 +65,7 @@ const description_html = marked(project.data.description ?? "");
 const content_html = marked(project.data.content ?? "");
 ---
 
-<MainLayout title={project.data.title} backUrl="/projects">
+<MainLayout title={project.data.title} backUrl="/projects" isSticky={false}>
 	
 	<Fragment slot="header">
 		<Banner bannerImage="/images/banner-home2.jpg" transition:name={name}>
