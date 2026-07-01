@@ -484,8 +484,15 @@
 	padding: 0rem 1.25rem;
 }
 
+.knowledge-content-img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
 .knowledge-content img {
-	width: clamp(70%, 20vw, 80%);
+	width: 60%;
 	object-fit: contain;
 }
 
@@ -533,12 +540,30 @@
 
 @media (max-width: 768px) {
 	.knowledge-container {
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: 1fr;
 		gap: 1rem;
 	}
 
 	.knowledge-group {
 		padding: 1rem 0px;
+	}
+
+	.knowledge-content-img{
+		width: fit-content;
+		max-width: 150px;
+	}
+
+	.knowledge-content img{
+		width: 100%;
+		object-fit: contain;
+	}
+
+	.knowledge-content{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0px 1rem;
+		width: 100%;
 	}
 
 	.knowledge-item,

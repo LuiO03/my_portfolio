@@ -60,17 +60,28 @@ const projects = await getCollection("projects");
 			</div>
 		</section>
 	</Fragment>
-	<Section id="about" title="Sobre mí" description="Soy un desarrollador apasionado por la tecnología y el desarrollo de software.">
-		<p>
-			Soy un <strong>desarrollador web</strong> apasionado por la tecnología y la creación de soluciones digitales. Con experiencia en diversas tecnologías, me gusta crear aplicaciones
-			eficientes y orientadas a las necesidades del usuario. Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que generen un impacto real.
-		</p>
+	<Section id="about" title="Sobre mí">
+		<div class="section-content-row">
+			<div class="project-column-block">
+				<p>
+					Soy un <strong>desarrollador web</strong> apasionado por la tecnología y la creación de soluciones digitales. Con experiencia en diversas tecnologías, me gusta crear aplicaciones
+					eficientes y orientadas a las necesidades del usuario. 
+				</p>
 
-		<p>
-			Mi enfoque se centra en la <strong>calidad del código</strong>, la arquitectura de software y la experiencia del usuario. Me esfuerzo por desarrollar productos mantenibles,
-			escalables e intuitivos, combinando un diseño cuidado con un desarrollo sólido. Siempre estoy dispuesto a afrontar nuevos desafíos y continuar evolucionando como
-			desarrollador.
-		</p>
+				<p>
+					Mi objetivo es seguir creciendo profesionalmente y contribuir a proyectos que generen un impacto real.
+				</p>
+
+				<p>
+					Mi enfoque se centra en la <strong>calidad del código</strong>, la arquitectura de software y la experiencia del usuario. Me esfuerzo por desarrollar productos
+					mantenibles, escalables e intuitivos, combinando un diseño cuidado con un desarrollo sólido. Siempre estoy dispuesto a afrontar nuevos desafíos y continuar evolucionando
+					como desarrollador.
+				</p>
+			</div>
+			<div class="section-content-img">
+				<img src="/images/fotox.jpg" alt="Luis Quispe Osorio" />
+			</div>
+		</div>
 	</Section>
 
 	<Section
@@ -326,7 +337,9 @@ const projects = await getCollection("projects");
 				<h3>Diseño y Experiencia de Usuario</h3>
 
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Low code development-amico.png" alt="Diseño y Experiencia de Usuario" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Low code development-amico.png" alt="Diseño y Experiencia de Usuario" loading="lazy" decoding="async" />
+					</div>
 
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
@@ -354,7 +367,9 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Arquitectura y Patrones</h3>
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Source code-bro.png" alt="Arquitectura y Patrones" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Source code-bro.png" alt="Arquitectura y Patrones" loading="lazy" decoding="async" />
+					</div>
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
 							<Icon name="tabler:layout-dashboard" class="knowledge-icon" />
@@ -377,7 +392,9 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Backend y APIs</h3>
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Software integration-bro.png" alt="Backend y APIs" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Software integration-bro.png" alt="Backend y APIs" loading="lazy" decoding="async" />
+					</div>
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
 							<Icon name="tabler:api" class="knowledge-icon" />
@@ -410,7 +427,9 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Seguridad Web</h3>
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Security On-bro.png" alt="Seguridad Web" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Security On-bro.png" alt="Seguridad Web" loading="lazy" decoding="async" />
+					</div>
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
 							<Icon name="tabler:shield-lock" class="knowledge-icon" />
@@ -443,7 +462,9 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Base de Datos</h3>
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Server-amico.png" alt="Base de Datos" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Server-amico.png" alt="Base de Datos" loading="lazy" decoding="async" />
+					</div>
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
 							<Icon name="tabler:relation-many-to-many" />
@@ -474,7 +495,9 @@ const projects = await getCollection("projects");
 			<div class="knowledge-group">
 				<h3>Control de Versiones</h3>
 				<div class="knowledge-content">
-					<img src="/images/knowledge/Version control-amico.png" alt="Control de Versiones" loading="lazy" decoding="async" />
+					<div class="knowledge-content-img">
+						<img src="/images/knowledge/Version control-amico.png" alt="Control de Versiones" loading="lazy" decoding="async" />
+					</div>
 					<ul class="knowledge-items">
 						<li class="knowledge-item">
 							<Icon name="tabler:brand-github" />
