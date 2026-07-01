@@ -25,8 +25,13 @@ const currentPath = Astro.url.pathname;
 			<a class="logo" href="/">LuiOsorio</a>
 		</div>
 		<ul class="sidebar-links">
-			<div class="sidebar-links-container">
+			<div class="sidebar-profile">
 				<img src="/images/perfil.jpg" alt="Logo" />
+				<p>
+					Desarrollador web con experiencia en la creación de sitios web modernos y funcionales.
+				</p>
+			</div>
+			<div class="sidebar-links-container">
 				<li>
 					<a href="/" class={currentPath === "/" ? "active" : "disabled"}>
 						<Icon class="sidebar-icon" name="tabler:home" />

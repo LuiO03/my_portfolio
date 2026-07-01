@@ -40,6 +40,9 @@ technologies:
   - name: CSS3
     icon: simple-icons:css
 
+  - name: SASS
+    icon: simple-icons:sass
+
   - name: JavaScript
     icon: simple-icons:javascript
 
